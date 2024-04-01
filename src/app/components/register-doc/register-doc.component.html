@@ -1,0 +1,81 @@
+<div class="container">
+	<div class="screen">
+        
+		<div class="screen__content">
+            <div class="header">
+            <h1 style="font-weight: bold;">Register</h1>
+                 </div>
+			<div class="row" style="text-align: center;justify-content: center; ">
+                    
+                    <div class="coolinput col">
+                        <label for="input" class="text">Username:</label>
+                        <input type="text" [(ngModel)]="users" placeholder="Username" name="input" class="input">
+                    </div>
+
+                    
+                    <div class="coolinput col" >
+                        <label for="input" class="text">Password:</label>
+                        <input type="password" [(ngModel)]="password" placeholder="Password" name="input" class="input">
+                    </div>
+                   
+                    <div style="margin-top: 15px;"></div>
+                    <div class="coolinput col">
+                        <label for="input" class="text">firstName:</label>
+                        <input type="text" [(ngModel)]="firstName" placeholder="firstName" name="input" class="input">
+                    </div>
+
+
+                    <div class="coolinput col" >
+                        <label for="input" class="text">lastName:</label>
+                        <input type="text" [(ngModel)]="lastName"  placeholder="lastName" name="input" class="input">
+                    </div>
+
+                    <div style="margin-top: 15px;"></div>
+
+                    <div class="coolinput col" >
+                      <label for="input" class="text">email:</label>
+                      <input type="email" [(ngModel)]="email"  placeholder="email" name="input" class="input">
+                  </div>
+
+                  <div class="coolinput col" >
+                    <label for="input" class="text">mobilePhone:</label>
+                    <input type="email" [(ngModel)]="mobilePhone"  placeholder="email" name="input" class="input">
+                </div>
+
+                    <div style="margin-top: 25px;"></div>
+
+                    
+
+                    <div class="coolinput col" style="margin-left: 15px;" >
+                        <p style="text-align: left;margin-right: 15px;">เพศ :
+                            <p-radioButton name="gender" value="1"  [(ngModel)]="gender"  label="ชาย"></p-radioButton>
+                            <p-radioButton [style]="{marginLeft: '.5rem'}" name="gender" [(ngModel)]="gender"   value="0" 
+                                label="หญิง"></p-radioButton></p>
+                    </div>
+                    
+
+                    
+            </div>
+            <div class="line"></div>
+			<div class="social-login">
+                
+                <button class="cta" style="margin-top: 20px;" (click)="register()" *ngIf="!data?.employee">
+                    <span>สมัครสมาชิก</span>
+                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                      <path d="M1,5 L11,5"></path>
+                      <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                  </button>
+
+                  <button class="cta" style="margin-top: 20px;" (click)="register()" *ngIf="data?.employee">
+                    <span>เพื่มผู้ใช้</span>
+                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                      <path d="M1,5 L11,5"></path>
+                      <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                  </button>
+			</div>
+		</div>
+		
+	</div>
+</div>

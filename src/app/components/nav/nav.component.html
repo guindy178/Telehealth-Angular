@@ -1,0 +1,63 @@
+
+<div class="header">
+  <img style="margin-right: 15px;" src="assets/Link.png" 
+            alt="เพิ่มผู้ใช้"
+            width="auto"
+            height="auto">          
+  <nav class="navbar">        
+           <ul>
+               <li><a routerLink="" class="active">Home</a></li>
+               <li><a  routerLink="/doctor/petition" [queryParams]="{ doctorsID: data.doctors?.doctorsID}" *ngIf="data?.doctors">ข้อมูลการนัดหมาย</a></li>
+               <li><a *ngIf="data?.employee" routerLink="View/Product" >เพื่มสินค้า</a></li>
+               <li><a *ngIf="data?.employee" routerLink="customer/details">รายละเอียดผู้ใช้งาน</a></li>
+               <li><a *ngIf="data?.employee" routerLink="doctor/details">รายละเอียดหมอ</a></li> 
+               <li><a *ngIf="data?.employee" routerLink="doctor/details/petition">รายละเอียดคำร้องขอสมัคร</a></li> 
+               <li><a *ngIf="data?.user" routerLink="Chst/history" [queryParams]="{ customerID: data.user?.customerID}"  >ประวัติการปรึกษา</a></li> 
+              
+
+
+
+               <li> <a [routerLink]="['/editprofile']"  [queryParams]="{ customerID: data.user?.customerID}" class="profile-link" style="text-decoration: underline;" >
+                   {{ data.user?.firstName }}
+                 </a></li>
+                 <li> <a  class="actives" [routerLink]="['/profile/doctor']"  [queryParams]="{ doctorsID: data.doctors?.doctorsID}" style="text-decoration: underline;">
+                  {{ data.doctors?.firstName }}
+                </a></li>
+
+                <li><a *ngIf="data?.user" routerLink="cart" [queryParams]="{ customerID: data.user?.customerID}">
+                  <img src="assets/bag.png" 
+                  style="height: 25px; width: 25px;" />
+                 </a></li> 
+           </ul>
+   </nav>
+      
+   <ul>
+       <button class="learn-more" routerLink="/login"  *ngIf="!data.user && !data.doctors && !data.employee">
+           <span class="circle" aria-hidden="true">
+           <span class="icon arrow"></span>
+           </span>
+           <span class="button-text" >Login</span>
+       </button>
+
+   
+
+
+
+       <button class="learn-more" (click)="logout()" *ngIf="data.user || data.doctors || data.employee ">
+        <span style="background-color: brown;" class="circle" aria-hidden="true">
+        <span  class="icon arrow"></span>
+        </span>
+        <span  class="button-text" >Logout</span>
+    </button>
+  </ul>
+   </div>
+
+  
+ 
+
+
+   <router-outlet></router-outlet>
+
+   <!-- <button routerLink="/login" type="button" *ngIf="!data.user">เข้าสู่ระบบ</button>
+   <button (click)="logout()" type="button" *ngIf="data.user">  ออกจากระบบ</button>
+  -->

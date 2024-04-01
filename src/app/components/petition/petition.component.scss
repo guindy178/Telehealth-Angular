@@ -1,0 +1,53 @@
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .title1 .p-button {
+    margin-right: 8px;
+    border: none;
+  }
+  .btn-add {
+    border-radius: 20px;
+    padding: 8px 16px;
+    
+  }
+  .table th {
+    padding: 10px;
+    text-align: center; /* เพิ่มส่วนนี้ */
+    background-color: #f8f8f8;
+  }
+  .table td {
+    padding: 10px;
+    text-align: center; /* เพิ่มส่วนนี้ */
+    border-bottom: 1px solid #cccccc;
+    vertical-align: middle;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .table td p-button {
+    margin-right: 5px; /* เพิ่มส่วนนี้ */
+  }
+  .custom-dialog-container {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+  }
+  .table td {
+    padding: 30px;
+    text-align: center; /* เพิ่มส่วนนี้ */
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 0px rgba(0, 0, 0, 0.1);
+  }

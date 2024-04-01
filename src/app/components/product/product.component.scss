@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@700&family=Maven+Pro&family=Noto+Serif+Thai:wght@700&display=swap');
+.container{
+    margin-top: 5%;
+ m
+        .text{
+            margin: 35px;
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            font-size: 1.5rem;
+            padding: 5px;
+           
+        }
+      }
+
+      .box1 {
+        margin: 5px;
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        background-image: linear-gradient(to right, #f7f7f7, #fafafa);
+        border-radius: 20px;
+        font-family: 'Maven Pro', sans-serif;
+        position: relative; /* เพื่อให้สามารถใช้ absolute ใน .line */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
+    }
+    .left {
+      margin-left: 5%;
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .right {
+    flex-direction: column;
+    margin-right: 5%;
+    width: 100%;
+  }
+  
+  .top {
+    display: flex;
+    align-items: center; /* จัดให้ข้อความอยู่ตรงกลางดิสเพลย์ */
+    justify-content: flex-start;
+    align-items: baseline;
+  }
+  p{
+    margin-left: 5px;
+    color: #a19b9b;
+    font-size: 1.2rem;
+  }
+ 
+  .space {
+    width: 20rem; /* ปรับขนาดของระยะห่างแนวตั้งตามที่คุณต้องการ */
+  }
+  .line {
+    max-width: 800px;
+    width: 100%; /* กว้างเท่ากับความกว้างของ .box1 */
+    height: 3px;
+    background-color: #01aadd;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    bottom: 0;
+}
+  .inform{
+    flex-direction: column;
+  }
+  /* สร้างคลาสสำหรับกรอบรูปภาพ */
+.framed-image {
+  border: 0.5px solid #01aadd; /* กำหนดขอบกรอบ 2px สีดำ */
+  padding: 10px; /* เพิ่มระยะห่างระหว่างรูปภาพและกรอบ */
+  max-width: 100%; /* กำหนดความกว้างสูงสุดให้ไม่เกินพื้นที่ให้กับรูปภาพ */
+  height: auto; /* รักษาอัตราส่วนของรูปภาพ */
+}
+
+button {
+  margin-bottom: 30px;
+  background-color: #FFFFFF;
+  border: 1px solid rgb(209,213,219);
+  border-radius: .5rem;
+  color: #111827;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+button:hover {
+  background-color: #f9fafb;
+}
+

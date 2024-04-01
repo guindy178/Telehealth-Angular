@@ -1,0 +1,83 @@
+<div class="container"> 
+   <div class="topcart">
+            <div class="sections" > 
+                <div>สินค้า</div>
+            </div>
+            <div class="price_unit"> 
+                <div>ราคาต่อชิ้น</div>
+            </div>
+
+            <div class="quantity"> 
+                <div>จำนวน</div>
+            </div>
+
+            <div class="sumprice"> 
+                <div>ราคารวม</div>
+
+                </div>
+            <div class="editpro"> 
+                <div>ลบสินค้า</div>
+
+                </div>
+        
+    </div>
+
+    <div class="contents">
+        <div class="cots" *ngFor="let cart of cart" >
+            <!-- <p-checkbox
+                name="groupname"
+                value="val1"
+                (onChange)="toggleProductSelection(cart.productID, cart.orderID, cart.quantity,cart.unit_price)"
+                ></p-checkbox> -->
+
+
+            <div class="imgpro" style="margin-left: 10px;"> 
+                <img src="http://localhost:3000/customer/api/image1/{{cart.imagefile}}" alt="รูปสินค้า" width="70px" height="70px">
+            </div>
+
+            <div class="namePro"> 
+                <p class="product" (click)="SeletProductID(cart.productID)"> {{cart.productName}} </p>
+            </div>
+            <div class="peice_uint"> 
+                <p class="text"> {{cart.unit_price}}</p>
+            </div>
+
+            <div class="quantity"> 
+                <p class="text"> {{cart.quantity}} </p>
+            </div>
+
+            <div class="sumprice" style="margin-left: 15px;"> 
+                <p class="text"> {{ (+cart.unit_price) * (+cart.quantity) }} </p>
+
+            </div>
+            <div class="delete"> 
+                <p class="texts" (click)="deleProduct(cart.productID, cart.orderID)"> ลบสินค้า </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="foots">
+        <div class="bottom" >
+          
+            <div class="sumprice">
+                <div class="text"> {{ totalPrice | currency:'USD':'symbol' }} </div>
+              </div>
+              
+                <div style="width: 17%;">
+                    <div> รวมสินค้า ( {{ totalItems }} สินค้า) </div>
+                </div>
+                <div class="summit">
+
+                    <form action="/Checkout"  >
+                        <input type="hidden" id="orderID" name="orderID" [value]="orderID">
+                        <input type="hidden" id="totalPrice" name="totalPrice" [value]="totalPrice*100">
+                        <input type="hidden" id="customerID" name="customerID" [value]="customerID">
+                        
+                        <input type="submit" id="checkout-button" value="Pay Now" (click)="onSubmit()">
+                      </form>
+
+                </div>
+        </div>
+
+    </div>   
+</div>

@@ -1,0 +1,68 @@
+
+
+
+
+<div class="header">
+	<a routerLink="" class="logo">Logo.</a>           
+	<nav class="navbar">        
+			 <ul>
+			
+				<button class="learn-more" routerLink="/login/doctor"  >
+					<span style="background-color: aqua;" class="circle" aria-hidden="true">
+					<span class="icon arrow"></span>
+					</span>
+					<span class="button-text" >LoginDoctor</span>
+				</button>
+			 </ul>
+	 </nav>
+		
+	
+  
+	 </div>
+
+
+<div class="container">
+
+	<div class="screen">
+        
+		<div class="screen__content">
+            <div class="header">
+            <h1 style="font-weight: bold;">Login</h1>
+                 </div>
+			<div class="login">
+              
+
+			
+                <div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" [(ngModel)]="users"  placeholder="User name ">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" class="login__input" [(ngModel)]="password" placeholder="Password" (keyup.enter)="login()">
+				</div>
+                <div class="login__field" style="text-align: center; margin-top: 30px;">
+				
+					<button class="cssbuttons-io-button" (click)="login()"> Login
+						<div class="icon">
+						  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+						</div>
+					  </button>
+
+				<div style="text-align: center; padding-top: .5rem;">
+					<a style="margin-left: 10px; color: rgb(109, 107, 106);"  routerLink="/register">ยังไม่มีสมาชิก?</a>
+				</div>
+            </div>
+			<div class="social-login">
+			
+				<div class="social-icons">
+					<a href="#" class="social-login__icon fab fa-instagram"></a>
+					<a href="#" class="social-login__icon fab fa-facebook"></a>
+					<a href="#" class="social-login__icon fab fa-twitter"></a>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+

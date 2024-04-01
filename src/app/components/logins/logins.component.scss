@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+* {
+	box-sizing: border-box;
+
+	font-family: Raleway, sans-serif;
+}
+
+body {
+	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
+}
+.header{
+    text-align: center;
+    margin-top: 50px;
+}
+.container {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	min-height: 80vh;
+}
+
+.screen {		
+	background-color: #FFF;	
+	position: relative;	
+	height: 600px;
+	width: 360px;	
+	box-shadow: 0px 0px 24px #5C5696;
+    border-radius: 1.1em;
+}
+
+.screen__content {
+	z-index: 1;
+	position: relative;	
+	height: 100%;
+}
+
+.screen__background {		
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);	
+}
+
+.screen__background__shape {
+	transform: rotate(45deg);
+	position: absolute;
+}
+
+.screen__background__shape1 {
+	height: 520px;
+	width: 520px;
+	background: #FFF;	
+	top: -50px;
+	right: 120px;	
+	border-radius: 0 72px 0 0;
+}
+
+.screen__background__shape2 {
+	height: 220px;
+	width: 220px;
+	background: #6C63AC;	
+	top: -172px;
+	right: 0;	
+	border-radius: 32px;
+}
+
+.screen__background__shape3 {
+	height: 540px;
+	width: 190px;
+	background: linear-gradient(270deg, #5D54A4, #6A679E);
+	top: -24px;
+	right: 0;	
+	border-radius: 32px;
+}
+
+.screen__background__shape4 {
+	height: 400px;
+	width: 200px;
+	background: #7E7BB9;	
+	top: 420px;
+	right: 50px;	
+	border-radius: 60px;
+}
+
+.login {
+	
+	padding: 30px;
+	padding-top: 50px;
+}
+
+.login__field {
+	padding: 20px 0px;	
+	position: relative;	
+}
+
+.login__icon {
+	position: absolute;
+	top: 30px;
+	color: #7875B5;
+}
+
+.login__input {
+	border: none;
+	border-bottom: 2px solid #0a7ad4;
+	background: none;
+	padding: 10px;
+	
+	font-weight: 700;
+	width: 100%;
+	transition: .2s;
+}
+
+.login__input:active,
+.login__input:focus,
+.login__input:hover {
+	outline: none;
+	border-bottom-color: #150cc4;
+}
+
+.login__submit {
+	background: #fff;
+	font-size: 14px;
+	margin-top: 30px;
+	height: 50px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+	text-transform: uppercase;
+    
+	font-weight: 700;
+
+	align-items: center;
+	width: 100%;
+	color: #4C489D;
+	box-shadow: 0px 2px 2px #5C5696;
+	cursor: pointer;
+	transition: .2s;
+}
+
+.login__submit:active,
+.login__submit:focus,
+.login__submit:hover {
+	border-color: #6A679E;
+	outline: none;
+}
+
+.button__icon {
+	font-size: 24px;
+	margin-left: auto;
+	color: #7875B5;
+}
+
+.social-login {	
+	position: absolute;
+	height: 140px;
+	width: 160px;
+	text-align: center;
+	bottom: 0px;
+	right: 0px;
+	color: #fff;
+}
+
+.social-icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-login__icon {
+	padding: 20px 10px;
+	color: #fff;
+	text-decoration: none;	
+	text-shadow: 0px 0px 8px #7875B5;
+}
+
+.social-login__icon:hover {
+	transform: scale(1.5);	
+}
+
+
+  .header{
+	
+	width:100%;
+	top: 0;
+	padding: 20px 10%;
+	background: transparent;
+	display: flex;
+	margin: 0 auto;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;  
+  }
+  
+  
+  
+  
+  //-------------------------Logo-----------------------
+  .logo{
+	position: relative;
+	font-size: 25px;
+	color: black;
+	text-decoration: none;
+	font-weight: 600;
+	text-transform: uppercase;
+  }
+  
+  .logo::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: white;
+	animation: showRight 1s ease forwards;
+	animation-delay: .4s;
+  }
+  
+  @keyframes showRight{
+	100% {
+		width: 0;
+	}
+  }
+  //----------------------------------------------------
+  
+  
+  
+  
+  //-------------------เมนู----------------------------------
+  .navbar a {
+	font-size: 18px;
+	color: black;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 500;
+	transition: .4s;
+  }
+  
+  .navbar a:hover,
+  .navbar a.active {
+	color: #00abf0;
+  }
+  
+  .navbar ul {
+	list-style: none;
+	display: flex; /* เพิ่มคุณสมบัตินี้เพื่อให้รายการลิงก์เรียงตัวอย่างนอกเสียงกัน */
+	justify-content: center; /* เพิ่มคุณสมบัตินี้เพื่อจัดให้รายการลิงก์อยู่กลาง */
+  }
+  
+  .navbar ul li {
+	position: relative;
+	margin: 0 20px;
+  }
+  
+  .navbar ul li::after {
+	content: '';
+	height: 3px;
+	width: 0;
+	background: #009688;
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	transition: 0.5s;
+  }
+  
+  .navbar ul li:hover::after {
+	width: 100%;
+  }
+
+  
+  
+  
+  // -------------ปุ่ม 2--------------------------------
+  .learn-more {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	border: 0;
+	vertical-align: middle;
+	text-decoration: none;
+	background: transparent;
+	padding: 0;
+	font-size: inherit;
+	font-family: inherit;
+  }
+   
+  button.learn-more {
+	width: 12rem;
+	height: auto;
+  }
+   
+  button.learn-more .circle {
+	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	position: relative;
+	display: block;
+	margin: 0;
+	width: 3rem;
+	height: 3rem;
+	background: #282936;
+	border-radius: 1.625rem;
+  }
+  
+  button.learn-more .circle .icon {
+	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: #fff;
+  }
+  
+  button.learn-more .circle .icon.arrow {
+	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	left: 0.625rem;
+	width: 1.125rem;
+	height: 0.125rem;
+	background: none;
+  }
+  
+  button.learn-more .circle .icon.arrow::before {
+	position: absolute;
+	content: "";
+	top: -0.29rem;
+	right: 0.0625rem;
+	width: 0.625rem;
+	height: 0.625rem;
+	border-top: 0.125rem solid #fff;
+	border-right: 0.125rem solid #fff;
+	transform: rotate(45deg);
+  }
+  
+  button.learn-more .button-text {
+	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	position: absolute;
+	top: 0;
+	left: 30px;
+	right: 0;
+	bottom: 0;
+	padding: 0.75rem 0;
+	margin: 0 0 0 1.85rem;
+	color: #282936;
+	font-weight: 700;
+	line-height: 1.6;
+	text-align: center;
+	text-transform: uppercase;
+  }
+  
+  button:hover .circle {
+	width: 100%;
+  }
+  
+  button:hover .circle .icon.arrow {
+	background: #fff;
+	transform: translate(1rem, 0);
+  }
+  
+  button:hover .button-text {
+	color: #fff;
+  }
+
+
+  .cssbuttons-io-button {
+	background: #030303;
+	color: white;
+	font-family: inherit;
+	padding: 0.35em;
+	padding-left: 1.2em;
+	font-size: 17px;
+	font-weight: 500;
+	border-radius: 0.9em;
+	border: none;
+	letter-spacing: 0.05em;
+	display: flex;
+	align-items: center;
+	box-shadow: inset 0 0 1.6em -0.6em #714da6;
+	overflow: hidden;
+	position: relative;
+	height: 2.8em;
+	padding-right: 3.3em;
+	width: 100%;
+  }
+  
+  .cssbuttons-io-button .icon {
+	background: white;
+	margin-left: 1em;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 2.2em;
+	width: 2.2em;
+	border-radius: 0.7em;
+	box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+	right: 0.3em;
+	transition: all 0.3s;
+  }
+  
+  .cssbuttons-io-button:hover .icon {
+	width: calc(100% - 0.6em);
+  }
+  
+  .cssbuttons-io-button .icon svg {
+	width: 1.1em;
+	transition: transform 0.3s;
+	color: #000000;
+  }
+  
+  .cssbuttons-io-button:hover .icon svg {
+	transform: translateX(0.1em);
+  }
+  
+  .cssbuttons-io-button:active .icon {
+	transform: scale(0.95);
+  }
+
+  .footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	background-color: #f0f0f0; /* สีพื้นหลังของ footer */
+  }
+  
+  

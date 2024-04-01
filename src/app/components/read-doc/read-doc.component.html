@@ -1,0 +1,101 @@
+<div class="container-xl px-4 mt-4" >
+ 
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header"></div>
+                <div class="card-body text-center">
+                    <!-- Profile picture image-->
+                    <img src="{{apiurl}}/doctor/api/image1/{{doctor.imageFile}}" 
+                    alt="user" width="200" 
+                    onerror="this.src='assets/default.jpg'">
+                    <!-- Profile picture help block-->
+                    <div class="small font-italic text-muted mb-4"></div>
+                
+
+                   
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8">
+         
+            <div class="card mb-4">
+                <div class="card-header"> รายละเอียดบัญชี</div>
+                <div class="card-body">
+                 
+    <!-- Form Row-->
+    
+   
+    <div class="row gx-3 mb-3">
+        <!-- Form Group (first name)-->
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputFirstName">ชื่อจริง</label>
+            <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.firstName">
+        </div> 
+        <!-- Form Group (last name)-->
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputLastName">นามสกุล</label>
+            <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.lastName">
+        </div>
+        
+    </div>
+    <div class="row gx-3 mb-3">
+
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputLocation">อีเมล์</label>
+            <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.email">
+        </div>
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputLocation">เบอร์โทรศัพท์</label>
+            <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.mobilePhone">
+        </div>
+ 
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputLocation">ภาษาที่รับปรึกษา</label>
+            <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.language">
+        </div>
+     
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputLocation">ความชำนาญ</label>
+            <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.expertiseNames">
+        </div>
+     
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputLocation">ราคาค่าบริการ แชท/โทร/วีดีโอคอล 20 นาที/ครั้ง</label>
+            <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.price">
+        </div>
+    
+    </div>
+
+
+    <div class="mb-3">
+        <label class="small mb-1" for="inputUsername">ประวัติการทำงาน</label>
+        <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.work_history">
+    </div>
+    <div class="mb-3">
+        <label class="small mb-1" for="inputUsername">การศึกษา</label>
+        <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.university">
+    </div>
+    <div class="mb-3">
+        <label class="small mb-1" for="inputUsername">อาการที่รับปรึกษา</label>
+        <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.symptoms_consult">
+    </div>
+
+    <!-- <button class="Add" (click)="updateStatus(doctorsID, status)" *ngIf="data?.employee">  
+        <span style="margin-right: 10px;">ยืนยันผ่านการตรวจสอบ</span>
+    </button> -->
+    
+
+      <button class="Add" [routerLink]="['/AddCustomer/employee']" 
+      [routerLink]="['/editprofile/doctor']" 
+      [queryParams]="{ doctorsID: data.doctors?.doctorsID }"
+      *ngIf="data?.user">  
+        <span style="margin-right: 10px;">แก้ไขโปรไฟล์</span>
+      </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

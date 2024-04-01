@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+* {
+	box-sizing: border-box;
+
+	font-family: Raleway, sans-serif;
+}
+
+body {
+	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
+}
+.header{
+    text-align: center;
+    margin-top: 50px;
+}
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 80vh;
+}
+
+.screen {		
+	background-color: #FFF;	
+	position: relative;	
+	height: 600px;
+	width: 53%;	
+	box-shadow: 0px 0px 24px #5C5696;
+    border-radius: 1.1em;
+}
+
+.screen__content {
+	z-index: 1;
+	position: relative;	
+	height: 100%;
+}
+
+.screen__background {		
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);	
+}
+
+.screen__background__shape {
+	transform: rotate(45deg);
+	position: absolute;
+}
+
+.screen__background__shape1 {
+	height: 520px;
+	width: 520px;
+	background: #FFF;	
+	top: -50px;
+	right: 120px;	
+	border-radius: 0 72px 0 0;
+}
+
+.screen__background__shape2 {
+	height: 220px;
+	width: 220px;
+	background: #6C63AC;	
+	top: -172px;
+	right: 0;	
+	border-radius: 32px;
+}
+
+.screen__background__shape3 {
+	height: 540px;
+	width: 190px;
+	background: linear-gradient(270deg, #5D54A4, #6A679E);
+	top: -24px;
+	right: 0;	
+	border-radius: 32px;
+}
+
+.screen__background__shape4 {
+	height: 400px;
+	width: 200px;
+	background: #7E7BB9;	
+	top: 420px;
+	right: 50px;	
+	border-radius: 60px;
+}
+
+
+.social-login {	
+
+	text-align: center;
+
+	
+}
+
+.social-icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-login__icon {
+	padding: 20px 10px;
+	color: #fff;
+	text-decoration: none;	
+	text-shadow: 0px 0px 8px #7875B5;
+}
+
+.social-login__icon:hover {
+	transform: scale(1.5);	
+}
+
+  
+
+   .coolinput {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  position: static;
+  max-width: 240px;
+}
+
+.coolinput label.text {
+  font-size: 0.75rem;
+  color: #818CF8;
+  font-weight: 700;
+  position: relative;
+  top: 0.5rem;
+  margin: 0 0 0 7px;
+  padding: 0 3px;
+  background: #e8e8e8;
+  width: fit-content;
+  
+}
+.coolinput input[type=date].input {
+	padding: 11px 10px;
+	font-size: 0.75rem;
+	border: 2px #818CF8 solid;
+	border-radius: 5px;
+	background: #e8e8e8;
+	width: 250px;
+  }
+  
+.coolinput input[type=email].input {
+	padding: 11px 10px;
+	font-size: 0.75rem;
+	border: 2px #818CF8 solid;
+	border-radius: 5px;
+	background: #e8e8e8;
+	width: 250px;
+  }
+  
+.coolinput input[type=password].input {
+	padding: 11px 10px;
+	font-size: 0.75rem;
+	border: 2px #818CF8 solid;
+	border-radius: 5px;
+	background: #e8e8e8;
+	width: 250px;
+  }
+  
+.coolinput input[type=text].input {
+  padding: 11px 10px;
+  font-size: 0.75rem;
+  border: 2px #818CF8 solid;
+  border-radius: 5px;
+  background: #e8e8e8;
+  width: 250px;
+}
+
+.coolinput input[type=text].input:focus {
+  outline: none;
+}
+
+.coolinput.col {
+    flex: 1; /* ควบคุมความกว้างของ col เพื่อแบ่งพื้นที่เท่าๆ กัน */
+    margin-right:30px; /* เพิ่มระยะห่างของ col ถ้าต้องการ (แบบอารมณ์ความห่าง) */
+  }
+  .row{
+    padding: 30px;
+  }
+  .radio-buttons-container {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	
+  }
+  
+  .radio-button {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	justify-content: right;
+  }
+  
+  .radio-button__input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+  
+  .radio-button__label {
+	display: inline-block;
+	padding-left: 30px;
+	margin-bottom: 10px;
+	position: relative;
+	font-size: 16px;
+	color: #030202;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .radio-button__custom {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 2px solid #555;
+	transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .radio-button__input:checked + .radio-button__label .radio-button__custom {
+	transform: translateY(-50%) scale(0.9);
+	border: 5px solid #4c8bf5;
+	color: #4c8bf5;
+  }
+  
+  .radio-button__input:checked + .radio-button__label {
+	color: #4c8bf5;
+  }
+  
+  .radio-button__label:hover .radio-button__custom {
+	transform: translateY(-50%) scale(1.2);
+	border-color: #4c8bf5;
+	box-shadow: 0 0 10px #4c8bf580;
+  }
+  
+  .cta {
+	position: relative;
+	margin: auto;
+	padding: 12px 18px;
+	transition: all 0.2s ease;
+	border: none;
+	background: none;
+   }
+   
+   .cta:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	border-radius: 50px;
+	background: #b1dae7;
+	width: 45px;
+	height: 45px;
+	transition: all 0.3s ease;
+   }
+   
+   .cta span {
+	position: relative;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	color: #234567;
+   }
+   
+   .cta svg {
+	position: relative;
+	top: 0;
+	margin-left: 10px;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke: #234567;
+	stroke-width: 2;
+	transform: translateX(-5px);
+	transition: all 0.3s ease;
+   }
+   
+   .cta:hover:before {
+	width: 100%;
+	background: #b1dae7;
+   }
+   
+   .cta:hover svg {
+	transform: translateX(0);
+   }
+   
+   .cta:active {
+	transform: scale(0.95);
+   }
+   .line{
+	height: 1px;
+	width: 100%;
+	text-align: center;
+	justify-content: center;
+	background-color: #8b8585;
+   }
+
+  

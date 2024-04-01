@@ -1,0 +1,58 @@
+
+<div class="wrapper" >
+  
+
+    <div class="right">
+      <div class="info">
+        <h3 style="margin-top: 30px; text-align: center;">ข้อมูลการปรึกษา</h3>
+        <div class="info_data">
+          <div class="data" style="margin-bottom: 30px;">
+            <h4 style="text-align: right">ช่องทางการปรึกษา: {{ consult }}</h4>
+          </div>
+          <div class="data">
+            <h4>วันที่: {{ currentDate | date }}</h4>
+          </div>
+          <div class="data" style="margin-bottom: 30px;" >
+            <h4 style="text-align: right">&nbsp;ราคา: {{doctor.price}} บาท</h4>
+            <div class="container"></div>
+          </div>
+      
+          <div class="data" style="margin-bottom: 30px;">
+            <h4>&nbsp;เวลา: {{ currentDate | date: 'HH:mm:ss' }}</h4>
+          </div>
+        </div>
+        <div class="info">
+          <h3 style="text-align: center">ช่องทางชำระเงิน</h3>
+      </div>
+      <div class="info_data">
+        <div class="data" style="margin-bottom: 30px;">
+          <h4 style="text-align: right">ชำระด้วยบัตรเครดิต</h4>
+        </div>
+        <div class="data">
+          <h4>สแกน QRcode</h4>
+        </div>
+        <div class="data">
+            <form action="/token" >
+                <!-- จำนวนเงิน -->
+                <input type="hidden" id="custId" name="price" [ngModel]="formattedAmount">
+    
+                <input type="hidden"s id="userId2" name="status" [value]="1">
+                <input type="hidden"s id="userId2" name="userId2" [value]="customerID">
+                <input type="hidden" id="userId1" name="userId1" [value]="doctorsID">
+                <input type="hidden" id="consult" name="consult" [value]="consult">
+                <input type="hidden" id="symptom" name="symptom" [value]="symptom">
+                <input type="hidden" id="history" name="history" [value]="history">
+              
+                <input type="submit" id="checkout-button" value="Pay Now" (ngSubmit)="onSubmit()">
+            </form>
+          </div>
+          <div class="data">
+          
+                <input type="submit" id="checkout-button" value="Pay QRcode" (click)="alert()">
+           
+          </div>
+      </div>
+
+
+    </div>
+

@@ -1,0 +1,67 @@
+<div class="container">
+    <button class="Btn">
+  
+        <div class="sign" [routerLink]="['/editprofile/doctor']" [queryParams]="{ doctorsID: doctor.doctorsID }"><svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024"><path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path></svg></div>
+        
+        <div [routerLink]="['/editprofile/doctor']" [queryParams]="{  doctorsID: doctor.doctorsID }" class="text">back</div>
+      </button>
+      
+      
+      
+    <h1 class="header"> เพื่มการศึกษาและปีจบการศึกษา </h1>
+   
+    <div class="expertisH">
+      <p style="margin-right: 10px; font-size: 1.5em;">การศึกษา</p>
+      <p-dropdown [options]="uinversity" placeholder="โปรดเลือกมหาวิทยาลัย" [(ngModel)]="selectedUniversity" optionLabel="university" (ngModelChange)="onUniversity($event)"></p-dropdown>
+      <p style="margin-right: 30px; font-size: 1.5em;" *ngIf="selectedUniversity">วุฒิการศึกษา</p>
+     <p-dropdown *ngIf="selectedUniversity" [options]="qualification" placeholder="วุฒิการศึกษา" [(ngModel)]="selectedQualification" optionLabel="level" (ngModelChange)="onQualification($event)"></p-dropdown>
+
+
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="form-group" style="width: 300px;">
+        <label class="small mb-1" style="font-size: 1.5em;">ปีจบการศึกษา</label>
+        <input class="form-control" type="date" [(ngModel)]="selectedDate">
+      </div>
+    </div>
+    
+
+    <div style="display: flex; margin-top: 15px; justify-content: center;">
+      <button class="btnsub"  (click)="checkSelectedValues()">
+        ยืนยันการเพื่ม
+      </button>
+           </div>
+        <div class="line"></div>
+        <h1 class="header"> ภาษา </h1>
+        <div class="card" style="justify-content: center;text-align: center;">
+            <p-table [value]="getAllUniversity" [tableStyle]="{ 'min-width': '20rem',' border-radius': '10px;' }">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>มหาวิทยาลัย</th>
+                  <th>วุฒิการศึกษา</th>
+                  <th>ปีจบการศึกษา</th>
+                  <th></th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-university>
+                <tr>
+                  <td>{{ university.university }}</td>
+                  <td>{{ university.level }}</td>
+                  <td>{{ formatDate(university.graduation_year) }}</td>
+                  <td>
+                    <button class="btndelete" *ngIf="university.university" (click)="onDeleteUniversity(university.universityID, university.qulalificationID)">
+                      <svg viewBox="0 0 448 512" class="svgIcon">
+                        <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
+                      </svg>
+                    </button>
+                    
+                  </td>
+                  
+                 
+                </tr>
+              </ng-template>
+            </p-table> 
+          </div>
+          
+   
+     

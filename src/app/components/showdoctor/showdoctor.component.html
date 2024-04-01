@@ -1,0 +1,120 @@
+
+
+      <div class="container" style="margin-top: 30px;">
+        <div class="main-body">
+      <div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center" >
+                <img src="http://localhost:3000/doctor/api/image1/{{doctor.imageFile}}" alt="user" width="150" >
+                <div class="mt-3">
+                  <h4>{{doctor.firstName}} {{doctor.lastName}}</h4>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mt-3">
+            
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">ภาษา</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{doctor.language}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">แผนก</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                 {{doctor.departmentNames}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">ความเชี่ยวชาญเฉพาะทาง</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{doctor.expertiseNames}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">วุฒิบัตร</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{doctor.university                  }}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">ประวัติการทำงาน</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{doctor.work_history}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">อาการที่รับปรึกษา</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                 {{doctor.symptoms_consult}}
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">ราคาค่าปรึกษา</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                 {{doctor.price}}/15 นาที (วีดีโอคอล)
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">ราคาค่าปรึกษา</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                 {{doctor.price}}/15 นาที (วีดีโอคอล)
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">ราคาค่าปรึกษา</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                 {{doctor.price}}/15 นาที (วีดีโอคอล)
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-12">
+                  <a class="btn btn-info " [routerLink]="['/doctor/appoinment']" [queryParams]="{ doctorsID: doctor.doctorsID }">ทำการนัดหมาย</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        
+      
+                </div>
+              </div>
+      
+            </div>
+        </div>

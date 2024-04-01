@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="HeadPro">
+        <div class="left">
+            <img src="http://localhost:3000/customer/api/image1/{{Product.imagefile}}"
+             alt="รูปสินค้า" width="450px" height="450px">
+        </div>
+        <div class="space"></div>
+        <div class="right">
+            <div class="namePro">
+                {{Product.productName}}
+            </div>
+            <div class="pricePro">฿ {{Product.price}}</div>
+            <div class="quantityPro">
+                <div>จำนวน</div>
+                <div class="space"></div>
+                <button (click)="decreaseValue()">-</button>
+                <input style="text-align: center; font-weight: bold;" [(ngModel)]="value1">
+                <button (click)="increaseValue()">+</button>
+                <div class="space"></div>
+                <div>มีสินค้าทั้งหมด {{Product.quantity}} </div>
+            </div>
+            
+            
+            <div class="btncart">
+                <button class="cart" (click)="addtoCart()">
+                    <img src="assets/add-to-cart.png" alt="รูปสินค้า" width="45px" height="45px">
+                    เพิ่มไปยังรถเข็น
+                </button>
+                <div class="space"></div>
+                <button class="SummitPro">ซื้อสินค้า</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="detailPro">
+        <div class="newtop">
+             <div class="tops">รายละเอียดสินค้า</div>
+             <div class="detail"> {{Product.productDetail}} </div>
+
+             <div class="sections"> 
+                <div>ผลิตที่</div>
+                <div class="space"></div>
+                <div>{{ Product.Produced_at }}</div>
+             </div>
+             <div class="sections"> 
+                <div>เลขที่ใบจดแจ้ง</div>
+                <div class="space"></div>
+                <div>{{ Product.Notification_number }}</div>
+             </div>
+             <div class="sections"> 
+                <div>วิธีการใช้งาน</div>
+                <div class="space"></div>
+                <div>{{ Product.uses }}</div>
+             </div>
+             <div class="sections"> 
+                <div>ส่วนประกอบ</div>
+                <div class="space"></div>
+                <div>{{ Product.component }}</div>
+             </div>
+        </div>
+       
+    </div>
+</div>
+
+
+<!-- ขาย Event coin | อิเลก | สายไฟ DM.9207742 -->

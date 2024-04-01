@@ -1,0 +1,58 @@
+
+<div class="container">
+<!-- <img src="assets/45669.jpg"id="productImage" 
+alt="รูปภาพสินค้า" 
+style="max-height: 350px; width: 100%;"> -->
+
+<div class="spaces" >
+ 
+    </div>
+    <div class="tops">
+      <h3 > หมวดหมู่สินค้า </h3>
+      <div class="input-container">
+        <input type="text" name="text" class="input" placeholder="search..." [(ngModel)]="searchInput" (ngModelChange)="search()">
+        <span class="icon"> 
+          <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        </span>
+      </div>
+      </div>
+      <hr style="margin: 20px; margin-bottom: 30px;">
+      <div class="Category">
+        <div class="menu">
+          <ul class="main-lists" >
+           <li style="font-weight: bold;">หมวดหมู่สินค้าทั้งหมด</li>
+
+          </ul>
+          <hr>
+          <ul class="main-list" *ngFor="let type of Types">
+            <li style="cursor: pointer;" (click)="showType(type.typeID)" > {{ type.typeName }} </li>
+          </ul>
+        </div>
+       <div class="space"> </div>
+
+       <div class="Product" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; cursor: pointer;">
+        <div class="card" style="width: 18rem; border: none; display: flex; flex-direction: column; align-items: center;" *ngFor="let productItem of filteredUser" >
+            <img (click)="SeletProductID(productItem.productID)" src="http://localhost:3000/customer/api/image1/{{productItem.imagefile}}" alt="รูปสินค้า" width="250px" height="200px">
+            <div class="card-body">
+                <div class="card-title">
+                    {{ productItem.productName }}
+                </div>
+                <div style="font-family: 'IBM Plex Sans Thai', sans-serif; font-size: 1.7em; color: rgb(10, 125, 225); font-weight: bold;" class="card-title">
+                    ฿{{ productItem.price }}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+      
+      
+      
+      
+           </div>
+      
+
+    
+
+
+

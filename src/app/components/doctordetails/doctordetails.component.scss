@@ -1,0 +1,133 @@
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .title1 .p-button {
+    margin-right: 8px;
+    border: none;
+  }
+  .btn-add {
+    border-radius: 20px;
+    padding: 8px 16px;
+    
+  }
+  .table th {
+    padding: 10px;
+    text-align: center; /* เพิ่มส่วนนี้ */
+    background-color: #f8f8f8;
+  }
+  .table td {
+    padding: 10px;
+    text-align: center; /* เพิ่มส่วนนี้ */
+    border-bottom: 1px solid #cccccc;
+    vertical-align: middle;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .table td p-button {
+    margin-right: 5px; /* เพิ่มส่วนนี้ */
+  }
+  .custom-dialog-container {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+  }
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-input {
+    flex: 1; /* ทำให้ input ขยายเต็มขนาดคงเหลือ */
+  }
+  
+  .add-user-button {
+    margin-left: 50px;
+  }
+  .input-container {
+    width: 220px;
+    position: relative;
+  }
+  
+  .icon {
+    position: absolute;
+    right: 5px;
+    top: calc(50% + 5px);
+    transform: translateY(calc(-50% - 5px));
+  }
+  
+  .input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    transition: .2s linear;
+    border: 2.5px solid black;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .Add{
+    background-color: #16d0ff;
+    justify-content: center;
+    margin-left: 50px;
+  }
+  @keyframes anim {
+    0%,
+    100% {
+      transform: translateY(calc(-50% - 5px)) scale(1);
+    }
+  
+    50% {
+      transform: translateY(calc(-50% - 5px)) scale(1.1);
+    }
+  }
+  
+  .View{
+    background-color: #96c0f0;
+    justify-content: center;
+  }
+  .View:hover{
+    background-color: #b8cce4;
+  }
+
+  .Edit{
+    background-color: #e9bb57;
+    justify-content: center;
+    margin-left: 15px;
+  }
+  .Edit:hover{
+    background-color: #e7d09c;
+  }
+
+  .EditStatus{
+    background-color: #cf630a;
+    justify-content: center;
+    margin-left: 15px;
+  }
+  .EditStatus:hover{
+    background-color: #e2d8cf;
+  }
+
+  .Delete{
+    background-color: #fc4902;
+    justify-content: center;
+    margin-left: 15px;
+  }
+  .Delete:hover{
+    background-color: #f09774;
+  }

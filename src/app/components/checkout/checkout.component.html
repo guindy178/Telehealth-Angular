@@ -1,0 +1,52 @@
+<div class="container"> 
+    <div class="topcart">
+             <div class="sections" style="margin-left: 8px;"> 
+                 <p class="p"> สินค้าที่ได้สั่งซื้อ </p>
+             </div>
+             <div class="price_unit"> 
+                 <div>ราคาต่อชิ้น</div>
+             </div>
+ 
+             <div class="quantity"> 
+                 <div>จำนวน</div>
+             </div>
+ 
+             <div class="sumprice"> 
+                 <div>ราคารวม</div>
+ 
+                 </div>
+             <div class="editpro"> 
+                 <div>ลบสินค้า</div>
+ 
+                 </div>
+         
+     </div>
+ 
+     <div class="contents">
+         <div class="cots" *ngFor="let cart of cart" >
+            
+ 
+             <div class="imgpro"> 
+                 <img src="http://localhost:3000/customer/api/image1/{{cart.imagefile}}" alt="รูปสินค้า" width="70px" height="70px">
+             </div>
+ 
+             <div class="namePro"> 
+                 <p class="product"> {{cart.productName}} </p>
+             </div>
+             <div class="peice_uint"> 
+                 <p class="text"> {{cart.unit_price}}</p>
+             </div>
+ 
+             <div class="quantity"> 
+                 <p class="text"> {{cart.quantity}} </p>
+             </div>
+ 
+             <div class="sumprice"> 
+                 <p class="text"> {{ (+cart.unit_price) * (+cart.quantity) }} </p>
+ 
+             </div>
+           
+         </div>
+     </div>
+ </div>
+ 

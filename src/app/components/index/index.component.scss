@@ -1,0 +1,115 @@
+.spaceTop{
+  height: 100px;
+}
+.content{
+  display: flex;
+}
+.info{
+  background-color: aliceblue;
+  width: 40%;
+  height: 300px;
+  display: flex;
+  padding: 0.9375rem;
+  cursor: pointer;
+
+}
+.infos{
+  margin-left: 15px;
+  background-color: rgb(48, 87, 121);
+  width: 30%;
+  height: 300px;
+  padding: 0.9375rem;
+  display: flex;
+  cursor: pointer;
+}
+
+.infosa{
+  padding: 0.9375rem;
+  display: flex;
+  background-color: aliceblue;
+  width: 30%;
+  height: 300px;
+  cursor: pointer;
+  
+}
+.infoss{
+  padding: 0.9375rem;
+  display: flex;
+  margin-left: 15px;
+  background-color: rgb(143, 170, 192);
+  width: 40%;
+  height: 300px;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+.product{
+  margin-left: 15px;
+  background-color: rgb(143, 170, 192);
+  width: 25%;
+  height: 300px;
+}
+.column {
+  float: left;
+  width: 24.75%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.item{
+  font-weight: bold; /* ทำให้ตัวหนัา */
+}
+.item:hover{
+  text-decoration: underline; /* ทำให้มีขีดเส้นใต้ */
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.listDoctor{
+  margin-top: 30px;
+  background-color: aliceblue;
+  height: 550px;
+  width: 100%;
+  box-shadow: 5px  rgba(0, 0, 0, 0.2);
+}
+.listItem{
+  padding: 0.935rem;
+}
+.p {
+  display: inline-block; /* ทำให้พื้นหลังปรับตามขนาดของเนื้อหาภายใน */
+  background-color: rgb(5, 95, 163);
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 5px 10px; /* ระยะห่างขอบของพื้นหลัง */
+}
+.button {
+  border: 2px solid pink; /* สร้างเส้นขอบสีชมพู */
+  background-color: white; /* สีพื้นหลังเป็นสีขาว */
+  color: pink; /* สีตัวอักษรเป็นสีชมพู */
+  padding: 10px 20px; /* กำหนดระยะห่างขอบของปุ่ม */
+  border-radius: 5px; /* กำหนดขอบมน (border radius) */
+  font-size: 1.5rem;
+}
+.button:hover{
+  background-color: white; /* สีพื้นหลังเป็นสีขาว */
+  border: 2px solid rgb(196, 147, 155); /* สร้างเส้นขอบสีชมพู */
+  color: rgb(196, 147, 155);
+}
+.card1{
+  background-color: rgb(215, 238, 203);
+  height: 350px;
+}
+.card2{
+  background-color: rgb(148, 188, 225);
+  height: 350px;
+}
+.card3{
+  background-color: rgb(220, 211, 182);
+  height: 350px;
+}

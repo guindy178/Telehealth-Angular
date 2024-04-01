@@ -1,0 +1,47 @@
+
+
+<h2 class="title" >รายการคำขอการปรึกษา
+</h2>
+<div class="card"></div>
+<div class="table-container">
+  <div class="table-wrapper">
+      <table class="table">
+      <thead>
+          <tr class="table table-striped">
+              
+              <th>ชื่อ</th>
+  
+              <th>เพศ</th>
+              <th>อายุ</th>
+              <th>อาการ</th>
+              <th>การแพ้ยา</th>
+              <th>ช่องทางการปรึกษา</th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appointment; let i = index">
+          <td>{{ appointment.firstName }}</td>
+          <td>{{ getGenderDescription(appointment.gender) }}</td>
+          <td>{{ calculateAge(appointment.birthday) }}</td>
+          <td>{{ appointment.history}}</td>
+          <td>{{ appointment.symptom }}</td>
+          <td>{{ appointment.consult }}</td>
+          <td>
+            <button [routerLink]="['/chat']" [queryParams]="{ chatUserID: appointment.customerID, appointmentID: appointment.appointmentID}">
+                <span> รายละเอียด </span>
+              </button>
+           
+          
+
+          </td>
+          
+          
+          </tr>
+
+      </tbody>
+      
+    </table>
+  </div>
+</div> 
+ 

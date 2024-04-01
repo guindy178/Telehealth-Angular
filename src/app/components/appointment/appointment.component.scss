@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@700&family=Maven+Pro&family=Noto+Serif+Thai:wght@700&display=swap');
+.container{
+  display: flex;
+  
+    margin-top: 5%;
+    .box {
+        width: 25%;
+        height: 400px;
+        background-image: linear-gradient(to right, #e4e0e9, #e4e0e9); /* เริ่มต้นจากสี #e4e0e9 และแบ่งสีไปเป็นสี #dcd3ec ทางขวา */
+        margin: 5px;
+        text-align: center;
+        justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
+        border-radius: 20px; /* เพิ่มความโค้งมนขอบมุม 20px */
+       
+        .text{
+            text-align: center;
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            font-size: 1.5rem;
+            padding: 5px;
+           
+        }
+      }
+      
+    .box1{
+        margin: 5px;
+        width: 75%;
+        height: 400px;
+        background-image: linear-gradient(to right, #e4e0e9, #d8ceeb); /* เริ่มต้นจากสี #e4e0e9 และแบ่งสีไปเป็นสี #dcd3ec ทางขวา */
+        border-radius: 20px; /* เพิ่มความโค้งมนขอบมุม 20px */
+        
+    }
+}
+
+.tmp {
+    display: flex;
+    width: 100%;
+  }
+  
+  .data {
+    flex: 1;
+    margin-right: 16px;
+  }
+  
+  .data:last-child {
+    margin-right: 0;
+  }
+  
+  .data input {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    width: calc(100% - 30px); /* ปรับความกว้างของ input เพิ่มขึ้น 30px เพื่อให้ห่างออกจากขอบของกล่อง .data 30px ที่คุณต้องการ */
+    margin: 8px 15px; /* ปรับค่าของ margin ให้เหมาะสมกับระยะห่างที่คุณต้องการ */
+    box-shadow: 3px 6px rgba(0, 0, 0, 0.13);
+  }
+  .data h4 {
+    margin: 15px 25px; /* ปรับค่าของ margin ให้เหมาะสมกับระยะห่างที่คุณต้องการ */
+  }
+  h4 {
+    margin: 15px 25px; /* ปรับค่าของ margin ให้เหมาะสมกับระยะห่างที่คุณต้องการ */
+  }
+
+.button1 {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #03045e;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+  margin: 15px 25px; 
+ }
+ 
+ .button1::before,
+ .button1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  transform: skew(15deg);
+  transition: all 0.5s;
+  overflow: hidden;
+  z-index: -1;
+ }
+ 
+ .button1::before {
+  left: -10px;
+  background: #240046;
+ }
+ 
+ .button1::after {
+  right: -10px;
+  background: #5a189a;
+ }
+ 
+ .button1:hover::before,
+ .button1:hover::after {
+  width: 58%;
+ }
+ 
+ .button1:hover span {
+  color: #e0aaff;
+  transition: 0.3s;
+ }
+ 
+ .button1 span {
+  color: #03045e;
+  font-size: 18px;
+  transition: all 0.3s ease-in;
+ }
+
+ .radio-inputs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  background-color: #EEE;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+  margin: 8px 23px;
+}
+
+.radio-inputs .radio {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+.radio-inputs .radio .name {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: .5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all .15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name {
+  background-color: #fff;
+  font-weight: 600;
+}

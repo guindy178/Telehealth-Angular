@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="card" >
+      <h4 style="text-align: center; margin-top: 10px;">คุณทำรายการสำเร็จ</h4>
+      <div style="display: flex; justify-content: center;">
+        <img src="assets/Fumy.png" alt="user" width="350" style="border-radius: 45%;">
+      </div>
+      <h3 style="text-align: center; margin: 15px;">ชำระเงินด้วย: <strong>Visa</strong></h3>
+      <div class="row no-gutters" >
+        <div class="col-4"></div>
+        <div class="col-2"><strong>วันที่ทำรายการ</strong></div>
+        <div class="col-2" style="margin-left: 50px;" ><strong>วันที่ {{ currentDate | date: 'HH:mm:ss' }}</strong></div>
+      </div>
+      <div class="row no-gutters" style=" margin-top: 10px;">
+        <div class="col-4"></div>
+        <div class="col-2"><strong>อาการ</strong></div>
+        <div class="col-2" style="margin-left: 50px;"><strong>{{history}}</strong></div>
+      </div>
+      <div class="row no-gutters" style="margin-top: 10px;">
+        <div class="col-4"></div>
+        <div class="col-2"><strong>การแพ้ยา</strong></div>
+        <div class="col-2" style="margin-left: 50px;"><strong>{{symptom}}</strong></div>
+      </div>
+      <!-- <button class="comic-button" (click)=" savePaymentToDatabase()">กรุณาคลิกที่นี้เพื่อปรึกษาแพทย์</button> -->
+      <button class="comic-button" (click)=" viewUser(doctorsID)">กรุณาคลิกที่นี้เพื่อปรึกษาแพทย์</button>
+
+      </div>
+    </div>
+  
+ 

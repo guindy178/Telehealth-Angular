@@ -1,0 +1,66 @@
+<h2 class="title">รายชื่อผู้ใช้งานทั่วไป </h2>
+    <div class="search" style="margin-bottom: 5px;">
+        <div class="input-container">
+            <input type="text" name="text" class="input" placeholder="ชื่อ/นามสกุล" [(ngModel)]="searchInput" (ngModelChange)="search()">
+            <span class="icon"> 
+              <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </span>
+          </div>
+
+  
+          <button class="Add" [routerLink]="['/AddCustomer/employee']" >  
+            <img style="margin-right: 15px;" src="assets/AddUser.png" 
+            alt="เพิ่มผู้ใช้"
+            width="35"
+            height="35">
+            <span style="margin-right: 10px;">เพื่มผู้ใช้</span>
+          </button>
+        </div>
+  <div class="card"></div>
+  
+  <div class="table-container" >
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+          <tr class="table table-striped">
+            <th>ชื่อ</th>
+            <th>อีเมล</th>
+            <th>เบอร์โทรศัพท์</th>
+            <th>สถานะผู้ใช้งาน</th>
+           
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let getDataDoctor of filteredUsers| slice:first:first+10">
+            <td>{{ getDataDoctor.firstName }}</td>
+            <td>{{ getDataDoctor.email }}</td>
+            <td>{{ getDataDoctor.mobilePhone }}</td>
+            
+            <td>
+                {{ getDataDoctor.isActive === 1 ? 'เป็นสมาชิกอยู่' : getDataDoctor.isActive === 0 ? 'ยกเลิกสมาชิก' : '' }}
+            </td>
+            <td>
+              <button  class="Check" [routerLink]="['/profile/doctor']"  [queryParams]="{ doctorsID: getDataDoctor.doctorsID }">  
+                <img style="margin-right: 15px;" src="assets/check.png" 
+                alt="เพิ่มผู้ใช้"
+                width="35"
+                height="35">
+                <span style="margin-right: 10px;">ตรวจสอบ</span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="card flex justify-content-center">
+          <p-paginator
+            (onPageChange)="onPageChange($event)"
+            [first]="first"
+            [rows]="10"
+            [totalRecords]="totalRecords"
+            [rowsPerPageOptions]="[10, 20, 30]"
+          ></p-paginator>
+        </div>
+    </div>
+  
+  

@@ -1,0 +1,33 @@
+<div class="input-form" style="margin-top: -50px; margin-bottom: 50px;" >
+   
+</div>
+<div class="container" >
+ 
+   <h3 class="label"> ค้นหาแพทย์</h3>
+  <input  placeholder="ชื่อ, แผนก, ความชำนาญ" type="text" name="text" class="inputSearch" >
+</div>
+
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-3" style="margin: 10px;" *ngFor="let getDoctor of getDoctors ; let i = index">
+      <div class="card1 d-flex flex-column"> <!-- ใส่คลาส d-flex flex-column เพื่อจัดเรียงแต่ละองค์ประกอบในคอลัมน์ให้อยู่ในบรรทัดเดียวกัน -->
+        <img src="http://localhost:3000/doctor/api/image1/{{getDoctor.imageFile}}" alt="user" width="100" height="100" style="border-radius: 50%;">
+        <h1 class="cookieHeading">{{ getDoctor.firstName }} {{ getDoctor.lastName }}</h1>
+        <p class="cookieDescription">{{ getDoctor.departmentNames }}</p>
+        <p class="cookieDescription multiline">{{ getDoctor.expertiseNames}}</p>
+        <h3 class="cookieSecondary">
+          <img src="assets/chat.png" alt="รูปภาพ" style="float: left; margin-right: 10px; width: 30px; height: 30px;">
+         {{getDoctor.price}}/15 นาที
+        </h3>
+      
+        <div class="buttonContainer">
+          <button [routerLink]="['/doctor/show']" [queryParams]="{ doctorsID: getDoctor.doctorsID }">
+            <span> รายละเอียด </span>
+          </button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

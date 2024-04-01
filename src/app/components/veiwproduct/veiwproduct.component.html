@@ -1,0 +1,100 @@
+
+
+<div class="container">
+  <div class="box1 container" style="font-family: 'Maven Pro', sans-serif;"> 
+      <div class="top"> 
+          <h3 class="textimg" style="margin-top: 20px; font-family: 'Maven Pro', sans-serif;"> รายการสินค้า </h3>
+          <label routerLink="/Add/Product" style="cursor: pointer;">   <img style="margin-right: 15px;" src="assets/plus.png" 
+              alt="เพิ่มผู้ใช้"
+              width="35"
+              height="35">
+          </label>
+          
+
+      </div>
+      <div class="inline"> 
+      <div class="line"> </div> 
+      </div>
+      
+    <div class="search">  
+      <div class="input-container">
+        <input type="text" name="text" class="input" placeholder="search..." [(ngModel)]="searchInput" (ngModelChange)="search()">
+        <span class="icon"> 
+          <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        </span>
+      </div>
+      
+  
+
+      <button (click)="isDropdownOpen = !isDropdownOpen"> 
+        <span class="text">ตัวกรอง</span>
+          <img 
+              src="assets/down-arrow.png" 
+              alt="เพิ่มผู้ใช้"
+              width="35"
+              height="35">
+      </button>
+    </div>
+    
+    <div class="group" *ngIf="isDropdownOpen">
+      <div class="input-containers">
+        <label for="text">หมวดหมู่สินค้า</label>
+        <p-dropdown [style]="{'border': '2.5px solid black', 'margin-top': '10px', 'margin-bottom': '10px'}" 
+        [options]="category" [(ngModel)]="selectedCategory" optionLabel="typeName" placeholder="ทั้งหมด" (ngModelChange)="onCategoryChange()"></p-dropdown>
+      </div>
+      <div class="input-containers" style="margin-left: 50px;">
+        <label for="text">หมวดหมู่สินค้าย่อย</label>
+        <p-dropdown [style]="{'border': '2.5px solid black', 'margin-top': '10px', 'margin-bottom': '10px'}" 
+        [options]="secondary" [(ngModel)]="selectedsecondary" optionLabel="typeName" placeholder="ทั้งหมด" (ngModelChange)="onSecondaryChange()"></p-dropdown>
+      </div>
+    </div>
+    
+    
+
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">รูปภาพสินค้า</th>
+              <th scope="col">ชื่อสินค้า</th>
+              <th scope="col">ราคา</th>
+              <th scope="col">จำนวน</th>   
+              <th scope="col"></th>  
+              <th scope="col"></th>  
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let Product of filteredUser | slice:first:first+10">
+              <td></td>
+              <td >
+                <img style="margin-right: 15px; border: 2px solid #000; border-radius: 5px; margin: 5px;"
+                    src="http://localhost:3000/customer/api/image1/{{Product.imagefile}}" 
+                    alt="เพิ่มผู้ใช้"
+                    width="100"
+                    height="100">
+            </td>
+              <td>{{Product.productName}}</td>
+              <td>{{Product.price}}</td>
+              <td>{{Product.quantity}}</td>
+              <td>
+                <p class="hover-effect" [routerLink]="['/edit/Product']" [queryParams]="{ ProductID: Product.productID }">รายละเอียด</p>
+            </td>
+            
+            
+       
+
+              <td></td>
+            </tr>
+          </tbody>
+        </table>  
+        <div class="card flex justify-content-center" style="margin-bottom: 10px;">
+          <p-paginator (onPageChange)="onPageChange($event)" 
+          [first]="first" 
+          [rows]="rows" 
+          [totalRecords]="this.filteredUser.length" 
+          [rowsPerPageOptions]="[10, 20, 30]">
+        </p-paginator>
+        </div>
+  </div>
+  
+</div>

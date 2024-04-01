@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="box1 container" style="font-family: 'Maven Pro', sans-serif;"> 
+        <div class="top"> 
+            <h3 class="textimg" style="margin-top: 20px;"> รูปสินค้า </h3>
+            <div class="line"> </div> 
+        </div>
+        <div class="imgProduct" style="margin-left: 9.5%;">
+            <img class="framed-image" src="http://localhost:3000/customer/api/image1/{{Product.imagefile}}" 
+            id="productImage" 
+            alt="รูปภาพสินค้า" 
+            style="max-height: 200px; max-width: 400px;">
+
+            <label for="fileInput" id="fileInputLabel">
+              <img src="assets/pluss.png" alt="เลือกรูปภาพ" style="width: 32px; height: 32px;">
+            </label>
+            <input type="file" (change)="onFileSelected($event)" id="fileInput" name="image" accept="image/*" style="display: none;">
+           </div>
+       
+  
+        
+
+        </div>
+
+
+    <div class="box2 container" style="font-family: 'Maven Pro', sans-serif;">
+        <div class="top"> 
+        <h3 class="textimg" style="margin-top: 20px;"> ข้อมูลสินค้า </h3>
+        <div class="line"> </div> 
+    </div>
+    <div class="input-wrapper">
+      <div class="label">ชื่อสินค้า :</div>
+      <input type="text" placeholder="ชื่อสินค้า" name="text" class="input" [(ngModel)]="Product.productName">
+    </div>
+
+      <div class="labels">ราคาสินค้า / จำนวนสินค้า :</div>
+      <div class="input-pric-quantity" style="margin-bottom: 15px;">
+        <input type="number" placeholder="ราคาสินค้า" name="price" class="input" [(ngModel)]="Product.price" min="0">
+        
+        <div class="space"></div> <!-- เพิ่ม div ว่างระหว่าง input fields -->
+        <input type="number" placeholder="จำนวนสินค้า" name="quantity" class="input" [(ngModel)]="Product.quantity" min="0">
+      </div>
+      
+      <div class="labels" style="margin-top: 5px;">ผลิตที่ / เลขที่ใบจดแจ้ง :</div>
+      <div class="input-pric-quantity" style="margin-bottom: 30px;">
+        <input type="text" placeholder="ผลิตที่" name="text" class="input" [(ngModel)]="Product.Produced_at">
+        <div class="space"></div> <!-- เพิ่ม div ว่างระหว่าง input fields -->
+        <input type="text" placeholder="เลขที่ใบจดแจ้ง" name="text" class="input" [(ngModel)]="Product.Notification_number">
+      </div>
+
+      <div class="labels" style="margin-top: 5px;">คำอธิบาย :</div>
+      <div class="input-big">
+        <textarea placeholder="คำอธิบาย" name="text" class="input" rows="3" [(ngModel)]="Product.productDetail"></textarea>
+      </div>
+
+      <div class="labels" style="margin-top: 5px;">ส่วนผสม :</div>
+      <div class="input-big">
+        <textarea placeholder="ส่วนผสม" name="text" class="input" rows="5" [(ngModel)]="Product.component"></textarea>
+      </div>
+
+      <div class="labels" style="margin-top: 5px;">วิธีใช้ :</div>
+      <div class="input-big">
+        <textarea placeholder="วิธีใช้" name="text" class="input" rows="5" [(ngModel)]="Product.uses"></textarea>
+     
+      </div>
+      
+      
+      <div class="top"> 
+    
+        <div class="line"> </div> 
+        <button (click)="updateProduct(Product.productID.toString())" >
+          Submit
+        </button>
+    </div>
+    </div>
+   
+</div>
+
+<div class="footer">
+  &copy; 2023 ชื่อเว็บไซต์ของคุณ
+</div>

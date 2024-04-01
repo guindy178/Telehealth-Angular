@@ -1,0 +1,80 @@
+.content {
+    width         : 100%;
+    height        : auto;
+    overflow-y    : scroll;
+    display       : flex;
+    flex-direction: column-reverse;
+    position      : relative;
+    background    : linear-gradient(45deg, #676d69, #8adb97);
+    color: #8adb97;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    box-shadow: 0px 2px 8px rgba(24, 26, 194, 0.4);
+   
+    .card {
+      width: 300px;
+      height: 220px;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 30px;
+      gap: 13px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+    }
+    
+    #cookieSvg {
+      width: 50px;
+    }
+    
+    #cookieSvg g path {
+      fill: rgb(97, 81, 81);
+    }
+    
+    .cookieHeading {
+      font-size: 1.2em;
+      font-weight: 800;
+      color: rgb(26, 26, 26);
+    }
+    
+    .cookieDescription {
+      text-align: center;
+      font-size: 0.7em;
+      font-weight: 600;
+      color: rgb(99, 99, 99);
+    }
+  
+  
+  }
+  .comic-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background-color: #ff5252;
+      border: 2px solid #000;
+      border-radius: 10px;
+      box-shadow: 5px 5px 0px #000;
+      transition: all 0.3s ease;
+      margin: 10px;
+    }
+    
+    .comic-button:hover {
+      background-color: #fff;
+      color: #ff5252;
+      border: 2px solid #ff5252;
+      box-shadow: 5px 5px 0px #ff5252;
+    }
+    
+    .comic-button:active {
+      background-color: #fcf414;
+      box-shadow: none;
+      transform: translateY(4px);
+    }
+    

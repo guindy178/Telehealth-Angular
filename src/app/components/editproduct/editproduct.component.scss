@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@700&family=Maven+Pro&family=Noto+Serif+Thai:wght@700&display=swap');
+.container{
+    margin-top: 5%;
+ 
+        .text{
+            margin: 35px;
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            font-size: 1.5rem;
+            padding: 5px;
+           
+        }
+      }
+
+      .box1 {
+        margin: 5px;
+        height: 400px;
+        background-image: linear-gradient(to right, #f7f7f7, #fafafa);
+        border-radius: 20px;
+        font-family: 'Maven Pro', sans-serif;
+        display: flex;
+        flex-direction: column; /* กำหนดให้เนื้อหาภายใน .box1 เรียงตามแนวดิ่ง */
+        
+        position: relative; /* เพื่อให้สามารถใช้ absolute ใน .line */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
+    }
+    .imgProduct {
+        text-align: center;
+        justify-content: center;
+    }
+    .box2 {
+        margin: 5px;
+        margin-bottom: 10px;
+        margin-top: 35px;
+        height: auto;
+        background-image: linear-gradient(to right, #f7f7f7, #fafafa);
+        border-radius: 20px;
+        font-family: 'Maven Pro', sans-serif;
+        display: flex;
+        flex-direction: column; /* กำหนดให้เนื้อหาภายใน .box1 เรียงตามแนวดิ่ง */
+        position: relative; /* เพื่อให้สามารถใช้ absolute ใน .line */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
+    }
+    .top{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .line {
+    
+        max-width: 800px;
+        width: 100%; /* กว้างเท่ากับความกว้างของ .box1 */
+        height: 3px;
+        background-color: #01aadd;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        bottom: 0;
+    }
+    .input-pric-quantity {
+      display: flex;
+      justify-content: center;
+      align-items: center; /* จัดให้ content อยู่ตรงกลางแนวตั้ง */
+    }
+    
+    .space {
+      width: 1rem; /* ปรับขนาดของระยะห่างแนวตั้งตามที่คุณต้องการ */
+    }
+    .input-pric-quantity input {
+        display: flex;
+     
+        background-color: #eee;
+        border: none;
+        padding: 0.9rem;
+        font-size: 1rem;
+        width: 39%;
+        justify-content: center; /* จัดให้ input อยู่ตรงกลางแนวนอน */
+        border-radius: 1.2rem;
+        color: rgb(0, 0, 0);
+        box-shadow: 0 0.4rem #dfd9d9;
+      }
+      .input-pric-quantity .label {
+        margin-bottom: 15px;
+        margin-left: 5px;
+        display: flex;
+        align-items: flex-start;
+      }
+      
+      .input-pric-quantity input:focus {
+        outline-color: rgb(0, 0, 0);
+      }
+      .input-wrapper {
+        display: flex;
+        flex-direction: column; /* แสดง element ภายในเป็นคอลัมน์ */
+        justify-content: space-around;
+        align-content: center;
+        flex-wrap: wrap;
+        text-align: center; /* จัดข้อความภายใน .input-wrapper ให้อยู่ตรงกลางแนวนอน */
+        align-items: flex-start;
+        margin-bottom: 30px;
+      }
+      
+      .input-wrapper .label {
+        margin-bottom: 15px;
+        margin-left: 5px;
+        display: flex;
+        align-items: flex-start;
+      }
+      
+      .input-wrapper input {
+        background-color: #eee;
+        border: none;
+        padding: 0.9rem;
+        font-size: 1rem;
+        width: 79%;
+        border-radius: 1.2rem;
+        color: rgb(0, 0, 0);
+        box-shadow: 0 0.4rem #dfd9d9;
+      }
+      
+      
+      .input-wrapper input:focus {
+        outline-color: rgb(0, 0, 0);
+      }
+      .input-wrappers {
+        position: relative;
+        display: inline-block;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        width: 250px; /* ปรับความกว้างตามที่คุณต้องการ */
+      }
+      
+      .custom-input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+      }
+      
+      .icon {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+      }
+      .input-big {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    .input-big textarea {
+        display: flex;
+        margin-bottom: 30px;
+        background-color: #eee;
+        border: none;
+        padding: 0.9rem;
+        font-size: 1rem;
+        width: 80%;
+        justify-content: center; /* จัดให้ input อยู่ตรงกลางแนวนอน */
+        border-radius: 1.2rem;
+        color: rgb(0, 0, 0);
+        box-shadow: 0 0.4rem #dfd9d9;
+      }
+      
+      
+      .input-big input:focus {
+        outline-color: rgb(0, 0, 0);
+      }
+      .input-dialog {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        align-content: center;
+        flex-wrap: wrap;
+       }
+       .input-dialog textarea {
+        display: flex;
+        margin-bottom: 30px;
+        background-color: #eee;
+        border: none;
+        padding: 0.9rem;
+        font-size: 1rem;
+        width: 80%;
+        justify-content: center; /* จัดให้ input อยู่ตรงกลางแนวนอน */
+        border-radius: 1.2rem;
+        color: rgb(0, 0, 0);
+        box-shadow: 0 0.4rem #dfd9d9;
+       }
+      
+      /* ปรับความยาวของ DropDown */
+        .input-wrapper .ui-dropdown-label {
+          width: 200px; /* ปรับความยาวตามที่ต้องการ */
+        }
+
+        .input-dialog input:focus {
+        outline-color: rgb(0, 0, 0);
+        }
+        .p-dropdown .p-dropdown-label {
+          width: 500px
+        }
+
+        button {
+          --color: #0077ff;
+          font-family: inherit;
+          display: inline-block;
+          width: 6em;
+          height: 2.6em;
+          line-height: 2.5em;
+          overflow: hidden;
+          margin: 20px;
+          font-size: 17px;
+          z-index: 1;
+          color: var(--color);
+          border: 2px solid var(--color);
+          border-radius: 6px;
+          position: relative;
+        }
+        
+        button::before {
+          position: absolute;
+          content: "";
+          background: var(--color);
+          width: 150px;
+          height: 200px;
+          z-index: -1;
+          border-radius: 50%;
+        }
+        
+        button:hover {
+          color: white;
+        }
+        
+        button:before {
+          top: 100%;
+          left: 100%;
+          transition: .3s all;
+        }
+        
+        button:hover::before {
+          top: -30px;
+          left: -30px;
+        }
+      
+      .input-dropdow {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          align-content: center;
+          flex-wrap: wrap;
+      }
+      .input-dropdow input {
+          display: flex;
+          margin-bottom: 30px;
+          background-color: #eee;
+          border: none;
+          padding: 0.9rem;
+          font-size: 1rem;
+          width: 80%;
+          justify-content: center; /* จัดให้ input อยู่ตรงกลางแนวนอน */
+          border-radius: 1.2rem;
+          color: rgb(0, 0, 0);
+          box-shadow: 0 0.4rem #dfd9d9;
+        }
+        .labels {
+          margin-bottom: 15px;
+        margin-left: 11%;
+        }
+        
+        .footer {
+          background-color: #333; /* สีพื้นหลังของ footer */
+          color: #fff; /* สีข้อความใน footer */
+          text-align: center;
+          padding: 20px 0; /* กำหนดระยะห่างของข้อความจากขอบของ footer ด้านบนและด้านล่าง */
+      }
+      .imgProduct {
+        display: flex;
+        align-items: flex-end; /* จัดจุดศูนย์กลางตามแนวดิ่ง */
+        gap: 10px; /* ระยะห่างระหว่างองค์ประกอบ */
+      }
+      
+      .framed-image {
+        border: 3px solid #01aadd; /* กำหนดขอบกรอบ 3px สีน้ำเงิน */
+        max-width: 25%; /* กำหนดความกว้างสูงสุดให้ไม่เกิน 300px */
+        max-height: 100%; /* กำหนดความสูงสูงสุดให้ไม่เกิน 200px */
+        border-radius: 10px;
+        
+      }
+      
+      
+      #fileInputLabel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        text-align: center;
+      }
+      
+      #fileInput {
+        display: block; /* แสดง input แบบ block */
+        margin-top: 5px; /* ระยะห่างด้านบน */
+      }
+      
+      
+
+      #fileInputLabel {
+       
+        color: #fff; /* สีข้อความบนปุ่ม */
+        padding: 10px 20px; /* ขนาดของปุ่ม */
+        border-radius: 5px; /* รอบขอบปุ่ม */
+        cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นรูปปุ่ม */
+        border: 2px solid #0056b3; /* ขอบที่มีความหนา 2px และสีขอบ #0056b3 */
+      }
+      
+
+#fileInputLabel:hover {
+  background-color: #e1e5e9; /* เมื่อโฮเวอร์ปุ่ม, เปลี่ยนสีพื้นหลัง */
+}

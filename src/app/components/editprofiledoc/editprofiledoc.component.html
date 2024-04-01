@@ -1,0 +1,158 @@
+<div class="container-xl px-3 mt-3">
+ 
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header"></div>
+                <div class="card-body text-center">
+                    <!-- Profile picture image-->
+                    
+                    <img src="{{apiurl}}/doctor/api/image1/{{doctor.imageFile}}" 
+                    alt="user" width="200" 
+                    onerror="this.src='assets/default.jpg'">
+                    <!-- Profile picture help block-->
+                    <div class="small font-italic text-muted mb-4"></div>
+                 
+                    <input  type="file" (change)="onFileSelected($event)" accept="image/*">
+                    <button class="btn btn-primary" (click)="onUpload(doctorsID)">อัปโหลด</button>
+
+                 
+                </div>    
+            </div>
+            
+        </div>
+
+        
+        <div class="col-xl-8" >
+         
+            <div class="card mb-4">
+                <div class="card-header"> รายละเอียดบัญชี</div>
+                <div class="card-body">
+                 
+    <!-- Form Row-->
+    <div class="row gx-3 mb-3">
+     
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputFirstName">ชื่อจริง</label>
+            <input class="form-control" id="inputFirstName" [(ngModel)]="doctor.firstName" type="text">
+        </div>
+     
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputLastName">นามสกุล</label>
+            <input class="form-control" id="inputLastName" [(ngModel)]="doctor.lastName" type="text">
+        </div>
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputLocation">อีเมล์</label>
+            <input class="form-control" id="inputLocation" type="text" [(ngModel)]="doctor.email">
+        </div>
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputLocation">เบอร์โทรศัพท์</label>
+            <input class="form-control" id="inputLocation" type="text" [(ngModel)]="doctor.mobilePhone">
+        </div>
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputLocation">ราคาค่าบริการสำหรับการคุยแชท 20 นาที/ครั้ง</label>
+            <input class="form-control" id="inputLocation" type="text" [(ngModel)]="doctor.price">
+        </div>
+    
+    </div>
+ 
+    <div class="row gx-3 mb-3">
+    
+        <div class="mb-3" >
+           <div class="line"></div>
+        </div>
+        <div *ngIf="doctor.status == '0'">
+            <div class="card-header"> <strong>ข้อมูลส่วนตัวเพื่มเติม</strong></div>
+            <div class="mb-3">
+                <label class="small mb-1" for="inputUsername"><strong>เลขบัตรประจำตัว</strong></label>
+                <input class="form-control" placeholder="x-xxxx-xxxxx-xx-x" type="text" [(ngModel)]="Identification" (input)="addHyphens($event)">
+
+            </div>
+            
+            <div class="mb-3">
+                <label class="small mb-1" for="inputUsername"><strong>สำเนาบัตรประชาชน</strong></label>
+                <input  class="form-control"  type="file" (change)="onFileSelecteds($event)">
+            </div>
+            <div class="mb-3">
+                <label class="small mb-1" for="inputUsername"><strong>ใบอนุญาตประกอบอาชีพ</strong></label>
+
+                <input  class="form-control"  type="file" (change)="onFileSelectedLis($event)">
+                <button class="btn btn-primary"  (click)="onLoad(doctorsID)">เพื่มข้อมูลส่วนตัว</button>
+            </div>
+            <div class="line"></div>
+        </div>
+          
+            
+            <div >
+                <div class="mb-3">
+                    <label class="small mb-1" for="inputUsername">ประวัติการทำงาน</label>
+                    <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.expertiseNames">
+                    <button class="button1" [routerLink]="['/profile/Expertis']" [queryParams]="{ doctorsID: doctor.doctorsID }" >
+                        เพื่มความชำนาญ
+                        <div class="arrow-wrapper">
+                            <div class="arrow"></div>
+                        </div>
+                    </button>
+                    
+                </div>
+
+                  <div class="mb-3">
+                    <label class="small mb-1" for="inputUsername">ภาษาที่รับปรึกษา</label>
+                    <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.language">
+                    <button class="button1" [routerLink]="['/profile/Language']" [queryParams]="{ doctorsID: doctor.doctorsID }">
+                        เพื่มภาษาที่รับปรึกษา
+                        <div class="arrow-wrapper">
+                            <div class="arrow"></div>
+                    
+                        </div>
+                    </button>
+                </div>
+
+        
+
+                <div class="mb-3">
+                    <label class="small mb-1" for="inputUsername">การศึกษา</label>
+                    <input disabled="true" class="form-control"  type="text" [(ngModel)]="doctor.university">
+                    <button class="button1" [routerLink]="['/profile/University']" [queryParams]="{ doctorsID: doctor.doctorsID }">
+                        เพื่มการศึกษาและปีจบการศึกษา
+                        <div class="arrow-wrapper">
+                            <div class="arrow"></div>
+                    
+                        </div>
+                    </button>
+                </div>
+                <div class="mb-3">
+                    <label class="small mb-1" for="inputUsername">ประวัติการทำงาน</label>
+                    <input class="form-control"  type="text" [(ngModel)]="doctor.work_history">
+                </div>
+
+                <div class="mb-3">
+                    <label class="small mb-1" for="inputUsername">อาการที่รับปรึกษา</label>
+                    <input  class="form-control"  type="text" [(ngModel)]="doctor.symptoms_consult">
+                </div>
+
+                <div class="line"></div>
+            </div>
+                
+                  
+                <div>
+                         <button class="btn btn-primary"  (click)="updateProfileDoctor(doctorsID)">บันทึกข้อมูล</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+      
+
+
+
+
+    
+
+
+
+

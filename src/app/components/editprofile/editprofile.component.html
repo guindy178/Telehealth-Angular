@@ -1,0 +1,359 @@
+<div class="container-xl px-4 mt-4">
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header"></div>
+                <div class="card-body text-center">
+                    <!-- Profile picture image-->
+                    <img style="justify-content: center; text-align: center;"
+                                src="http://localhost:3000/customer/api/image1/{{userData.imageFile}}"
+                                alt="user"
+                                width="200"
+                                onerror="this.src='assets/default.jpg'">
+                    <!-- Profile picture help block-->
+                    <div class="small font-italic text-muted mb-4"></div>
+                 
+                    <input  type="file" (change)="onFileSelected($event)" accept="image/*">
+                    
+                    <button class="Btn" (click)="onUpload(customerID)">
+                        <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
+                        <span class="icon2"></span>
+                        <span class="tooltip">Upload</span>
+                     </button>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8" >
+         
+            <div class="card mb-4">
+                <div class="card-header" > รายละเอียดบัญชี
+                    <button  class="back"  *ngIf="data?.employee" [routerLink]="['/customer/details']">  
+                        <img style="margin-right: 15px;" src="assets/back-button.png" 
+                        alt="บันทึกข้อมูล"
+                        width="25"
+                        height="25">
+                        <span style="margin-right: 10px;">ย้อนกลับ</span>
+                      </button>
+                </div> 
+              
+                <div class="card-body">
+                 
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputFirstName">ชื่อจริง</label>
+                                <input class="form-control" id="inputFirstName" [(ngModel)]="userData.firstName" type="text">
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">นามสกุล</label>
+                                <input class="form-control" id="inputLastName" [(ngModel)]="userData.lastName" type="text">
+                            </div>
+                        </div>
+                        <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (organization name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputOrgName">เบอร์โทรศัพท์</label>
+                                <input class="form-control" id="inputOrgName" type="text" [(ngModel)]="userData.mobilePhone">
+                            </div>
+                            <!-- Form Group (location)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">อีเมล์</label>
+                                <input class="form-control" id="inputLocation" type="text" [(ngModel)]="userData.email">
+                            </div>
+                        </div>
+
+                    
+                    
+                     
+                        <!-- Save changes button-->
+                     
+                         <button  class="Edit" (click)="updateProfile(customerID)"  *ngIf="data?.user">  
+                            <img style="margin-right: 15px;" src="assets/writing.png" 
+                            alt="บันทึกข้อมูล"
+                            width="35"
+                            height="35">
+                            <span style="margin-right: 10px;">บันทึกข้อมูล</span>
+                          </button>
+                          <button  class="Edit" (click)="updateProfile(customerID)"  *ngIf="data?.employee">  
+                            <img style="margin-right: 15px;" src="assets/writing.png" 
+                            alt="บันทึกข้อมูล"
+                            width="35"
+                            height="35">
+                            <span style="margin-right: 10px;">บันทึกข้อมูล</span>
+                          </button>
+
+                        
+                         
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-xl" *ngIf="data?.user">
+    <div class="line"></div>
+</div>
+    
+<div class="container-xl px-4 mt-4 menu-container" *ngIf="data?.user">
+    <hr class="mt-0 mb-4">
+    <div class="d-flex justify-content-center">
+        <div class="text-center px-3" (click)="toggleAddresstSection()">
+            <div class="menu-item">ที่อยู่</div>
+        </div>
+        <div class="text-center px-3" (click)="togglePasswordSection()">
+            <div class="menu-item" >เปลี่ยนรหัสผ่าน</div>
+        </div>
+        <div class="text-center px-3">
+            <div class="menu-item" routerLink="/Checkout" [queryParams]="{ customerID: data.user?.customerID}" >การซื้อของฉัน</div>
+        </div>
+    </div>
+</div>
+
+ <!-- ส่วนของที่อยู่-->
+ <div class="container-xl" style="max-width: 900px;"  *ngIf="showAddressSection">
+    <div class="card mb-4 vertical-container">
+        <div class="card-header" style="align-items: baseline;"> เพื่มที่อยู่ 
+            <button class="cssbuttons-io-button" (click)="showDialog()" > เพื่มที่อยู่
+                <div class="icon">
+                    <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                </div>
+              </button>
+        </div>
+        <p-dialog header="เพื่มที่อยู่ใหม่" [(visible)]="visible" [modal]="true" class="custom-dialog" [draggable]="false" [resizable]="false">
+            <div class="container" style="text-align: center;" >
+                <div style="margin-bottom: 20px;"> 
+                <div class="inputBox" style="margin-top: 10px; display: inline-block; margin-right: 10px;">
+                    <input type="text" [(ngModel)]="firstName">
+                    <span class="inputLabel">ชื่อ:</span>
+                  </div>
+
+
+              <div class="inputBox" style="margin-top: 10px; display: inline-block; ">
+                <input  type="text" [(ngModel)]="phone_number">
+                <span>หมายเลขโทรศัพท์:</span>
+              </div>
+            </div>
+
+
+            <div class="inputBox1" style="position: relative; margin-bottom: 20px;">
+                <p-dropdown [options]="province" [(ngModel)]="selectedProvince" optionLabel="provinceName" placeholder="จังหวัด" (ngModelChange)="onProvinceSelect()"></p-dropdown>
+            </div>
+            
+            <div class="inputBox1" style="position: relative; margin-bottom: 20px;">
+                <p-dropdown [disabled]="!selectedProvince" [options]="district" [(ngModel)]="selecteddistrict" optionLabel="districtName" placeholder="เขต/อำเภอ" (ngModelChange)="onDistrictIdSelect()"></p-dropdown>
+            </div>
+
+
+            <div class="inputBox1" style="position: relative;margin-bottom: 20px;">
+                <p-dropdown [disabled]="!selecteddistrict" [options]="subdistrict" [(ngModel)]="selectedsubdistrict" optionLabel="subdistrictName" placeholder="แขวง/ตำบล"></p-dropdown>
+            </div>
+            
+
+
+          
+            
+            
+
+            <div class="inputBox1" style="position: relative;">
+                <textarea placeholder="บ้านเลขที่,ซอย,หมู่,ถนน,แขวง/ตำบล" type="text" style="padding: 10px;" [(ngModel)]="address_details"></textarea>
+            </div>
+
+            
+            <div style="margin-top: 20px;margin-bottom: 20px;">  โปรดเลือกประเภทสถานที่จัดส่ง </div>
+            <div class="buttongroup">
+                <button class="ex" [class.selected]="selectedButton === 'home'" (click)="onButtonClick('home', 'ที่บ้าน')" style="margin-right: 15px;">
+                    ที่บ้าน
+                    <img src="assets/house.png" 
+                        alt="บันทึกข้อมูล"
+                        width="25"
+                        height="25">
+                </button>
+                <button class="excondo" [class.selected]="selectedButton === 'condo'" (click)="onButtonClick('condo', 'ที่คอนโด')" style="margin-right: 15px;">
+                    ที่คอนโด
+                    <img src="assets/building.png" 
+                        alt="บันทึกข้อมูล"
+                        width="25"
+                        height="25">
+                </button>
+                <button class="exwork" [class.selected]="selectedButton === 'work'" (click)="onButtonClick('work', 'ที่ทำงาน')" style="margin-right: 15px;">
+                    ที่ทำงาน
+                    <img src="assets/pin.png" 
+                        alt="บันทึกข้อมูล"
+                        width="25"
+                        height="25">
+                </button>
+            </div>
+            
+            
+    <div class="submit">
+     
+
+        <button class="send" (click)="address()">
+            ยืนยัน
+        </button>
+    </div>
+        </div>
+              
+
+          </p-dialog>
+          
+          <div class="card-body" *ngFor="let AddressUser of AddressUser">
+            <div class="form-groupaddress">
+              <div>{{AddressUser.firstName}} | {{AddressUser.phone_number}}</div>
+              <div>{{AddressUser.address_details}}</div>
+              <div>{{AddressUser.subdistrictName}},{{AddressUser.districtName}},{{AddressUser.provinceName}}</div>
+              <div class="set">
+                <div class="edit-button" (click)="showDialog1(AddressUser.addressID.toString())">
+                  แก้ไข
+                </div>
+                <div class="delete-button" (click)="deleteAddress(AddressUser.addressID.toString())">
+                  ลบ
+                </div>
+                <button  class="btndefail" *ngIf="AddressUser.defaults === 1" [ngClass]="{'red-button': AddressUser.defaults === 1, 'gray-button': AddressUser.defaults !== 1}">
+                  ค่าเริ่มต้น
+                </button>
+
+                  <button class="btndefails" (click)="editDefaults(AddressUser.addressID.toString())" *ngIf="AddressUser.defaults === 0" [ngClass]="{'red-button': AddressUser.defaults === 0, 'gray-button': AddressUser.defaults !== 0}">
+                  ตั้งเป็นค่าเริ่มต้น
+                </button>
+
+                <!-- <p-dialog header="Header" [(visible)]="editDefalut" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+                    <button class="btneditDefault">
+                        Click
+                    </button>
+                    <button class="btneditDefault">
+                        Click
+                    </button>
+                </p-dialog> -->
+              </div>
+
+            
+             
+
+             <div class="live"></div>
+            </div>
+         
+        </div>
+    </div>
+</div>
+<p-dialog header="แก้ไขที่อยู่" [(visible)]="edit" [modal]="true" class="custom-dialog" [draggable]="false" [resizable]="false">
+    <div class="container" style="text-align: center;" >
+        <div style="margin-bottom: 20px;"> 
+        <div class="inputBox" style="margin-top: 10px; display: inline-block; margin-right: 10px;">
+            <input type="text" [(ngModel)]="userAddress.firstName">
+            <span class="inputLabel">ชื่อ:</span>
+          </div>
+
+
+      <div class="inputBox" style="margin-top: 10px; display: inline-block; ">
+        <input  type="text" [(ngModel)]="userAddress.phone_number">
+        <span>หมายเลขโทรศัพท์:</span>
+      </div>
+
+      <div class="inputBoxs">
+        <span>จังหวัด, เขต/อำเภอ, แขวง/ตำบล: เดิม</span>
+       <p>{{userAddress.provinceName}}, {{userAddress.districtName}}, {{userAddress.subdistrictName}}</p>
+     
+      </div>
+
+    </div>
+
+
+    <div class="inputBox1" style="position: relative; margin-bottom: 20px;">
+        <p-dropdown [options]="province" [(ngModel)]="selectedProvince" optionLabel="provinceName" placeholder="จังหวัด"  (ngModelChange)="onProvinceSelect()"></p-dropdown>
+      </div>
+      
+    
+    <div class="inputBox1" style="position: relative; margin-bottom: 20px;">
+        <p-dropdown [disabled]="!selectedProvince" [options]="district" [(ngModel)]="selecteddistrict" optionLabel="districtName" placeholder="เขต/อำเภอ" (ngModelChange)="onDistrictIdSelect()"></p-dropdown>
+    </div>
+
+
+    <div class="inputBox1" style="position: relative;margin-bottom: 20px;">
+        <p-dropdown [disabled]="!selecteddistrict" [options]="subdistrict" [(ngModel)]="selectedsubdistrict" optionLabel="subdistrictName" placeholder="แขวง/ตำบล"></p-dropdown>
+    </div>
+    
+
+
+  
+    
+    
+
+    <div class="inputBox1" style="position: relative;">
+        <textarea  type="text" style="padding: 10px;" [(ngModel)]="userAddress.address_details"></textarea>
+    </div>
+
+    
+    <div style="margin-top: 20px;margin-bottom: 20px;">  โปรดเลือกประเภทสถานที่จัดส่ง </div>
+    <div class="buttongroup">
+        <button class="ex" [class.selected]="selectedButton === 'home'" (click)="onButtonClick('home', 'ที่บ้าน')" style="margin-right: 15px;">
+            ที่บ้าน
+            <img src="assets/house.png" 
+                alt="บันทึกข้อมูล"
+                width="25"
+                height="25">
+        </button>
+        <button class="excondo" [class.selected]="selectedButton === 'condo'" (click)="onButtonClick('condo', 'ที่คอนโด')" style="margin-right: 15px;">
+            ที่คอนโด
+            <img src="assets/building.png" 
+                alt="บันทึกข้อมูล"
+                width="25"
+                height="25">
+        </button>
+        <button class="exwork" [class.selected]="selectedButton === 'work'" (click)="onButtonClick('work', 'ที่ทำงาน')" style="margin-right: 15px;">
+            ที่ทำงาน
+            <img src="assets/pin.png" 
+                alt="บันทึกข้อมูล"
+                width="25"
+                height="25">
+        </button>
+    </div>
+    
+    
+<div class="submit">
+
+
+<button class="send" (click)="updateAddress()">
+    ยืนยัน
+</button>
+</div>
+</div>
+      
+
+  </p-dialog>
+ <!-- ส่วนของเปลี่ยนรหัสผ่าน-->
+ <div class="container-xl" style="max-width: 900px;"  *ngIf="showPasswordSection">
+    <div class="card mb-4 vertical-container">
+        <div class="card-header"> เปลี่ยนแปลงรหัสผ่าน</div>
+        <div class="card-body">
+              <!-- Password -->
+            <div class="form-group">
+               
+                <label class="form-control1 center-input" for="inputPassword">รหัสผ่านเก่า</label>
+                <input class="form-control center-input" id="inputUsername" [(ngModel)]="changePassword.password" type="password">
+            </div>
+            <div class="form-group">
+               
+                <label class="form-control1 center-input" for="inputPassword">ตั้งรหัสผ่านใหม่</label>
+                <input class="form-control center-input" id="inputUsername" [(ngModel)]="changePassword.newPassword" type="password">
+            </div>
+            <!-- Password -->
+            <div class="form-group">
+                <label class="form-control1 center-input" for="inputPassword">ยืนยันรหัสผ่าน</label>
+                <input class="form-control center-input" id="inputPassword" [(ngModel)]="confirmPassword" type="password">
+            </div>
+
+            <!-- Save changes button-->
+            <button (click)="handleConfirmPassword()">ยืนยันรหัสผ่าน</button>
+        </div>
+    </div>
+</div>
+

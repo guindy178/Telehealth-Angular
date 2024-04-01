@@ -1,0 +1,31 @@
+
+<div class="chat-wrapper">
+  <div class="header">
+      <!-- <img src="http://localhost:3000/customer/api/image1/{{userData.imageFile}}"
+          alt="user" width="100" style="border-radius: 70%;"> -->
+      <div class="">คุณ {{ userName }}</div>
+
+      <div *ngIf="_data.doctors"> <button (click)="updateAppointment()"> ออกจากห้องแชท </button> </div>
+  </div>
+
+  <div class="content">
+      <div class="chat">
+          <ul id="messages" class="message-list">
+              <li *ngFor="let item of chatItems;"
+                  [ngClass]="{ 'left': item.type != chatType, 'right': item.type == chatType }">
+                  <div class="box-chat">
+                      <span>{{ item.message }}</span>
+                      <small>{{ item.time | date : 'medium' }}</small>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+
+  <form class="footer" (submit)="sendMessage()">
+      <input id="input" [(ngModel)]="inputText" [ngModelOptions]="{ standalone: true }" autocomplete="off" />
+      <button type="submit" class="btn">
+          <i class="pi pi-caret-right" style="font-size: 25px;"></i>
+      </button>
+  </form>
+</div>

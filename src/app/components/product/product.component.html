@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="box1 container" style="font-family: 'Maven Pro', sans-serif">
+        <div class="left">
+            <h4 class="textimg" style="margin-top: 20px; text-align: center; font-family: 'IBM Plex Sans Thai', sans-serif;"> ข้อมูลสินค้า </h4>
+            <br>
+         
+            <img src="http://localhost:3000/customer/api/image1/{{Product.imagefile}}"  
+                id="productImage" 
+                alt="รูปภาพสินค้า" 
+                class="framed-image"
+                style="width: 250px; height: 250px; text-align: center;">
+
+
+            <h3 class="textimg" style="margin-top: 20px;text-align: center; font-family: 'IBM Plex Sans Thai', sans-serif;"> {{Product.productName}}</h3>
+        </div>
+
+        <div class="space">
+       
+        </div>
+
+          <div class="right">
+            <div class="top">
+            <h4 class="textimg" style="margin-top: 20px; font-family: 'IBM Plex Sans Thai', sans-serif;"> หมายเลขสินค้า : </h4>
+            <p> {{Product.Notification_number}} </p>    
+        </div>
+        
+        <div class="top">
+            <h4 class="textimg" style="margin-top: 20px; font-family: 'IBM Plex Sans Thai', sans-serif;"> ผลิตที่ :</h4>
+            <p> {{Product.Produced_at}} </p>    
+        </div>
+        <div class="top">
+            <h4 class="textimg" style="margin-top: 20px; font-family: 'IBM Plex Sans Thai', sans-serif;"> ราคาสินค้า :</h4>
+            <p> {{Product.price}} </p> 
+        </div>
+        <div class="top">
+            <h4 class="textimg" style="margin-top: 20px; font-family: 'IBM Plex Sans Thai', sans-serif;"> จำนวนสินค้า :</h4>
+            <p> {{Product.quantity}} </p> 
+        </div>
+      
+        <div class="line"> </div> 
+        <div class="inform">
+            <h4 class="textimg" style="margin-top: 20px; font-family: 'IBM Plex Sans Thai', sans-serif;"> รายละเอียดสินค้า :</h4> 
+            <p> {{Product.productDetail}} </p> 
+        </div>
+
+        <div class="inform">
+            <h4 class="textimg" style="margin-top: 20px; font-family: 'IBM Plex Sans Thai', sans-serif;"> วิธีใช้ :</h4> 
+            <p> {{Product.uses}} </p>
+        </div>
+
+        <div class="inform">
+            <h4 class="textimg" style="margin-top: 20px; font-family: 'IBM Plex Sans Thai', sans-serif;"> ส่วนผสม :</h4> 
+            <p> {{Product.component}} </p>
+        </div>
+        <button routerLink="/edit/Products" [queryParams]="{ ProductID: Product.productID }">
+            แก้ไขสินค้า
+          </button>
+          </div>
+          
+    </div>
+
+</div>
+
+
+
+
+<!-- <div class="left"> 
+    <h3 class="textimg" style="margin-top: 20px;"> รูปสินค้า </h3>
+    <img src="assets/box.png" id="productImage" alt="รูปภาพสินค้า" style="height: 200px; width: 300px;">
+
+    <div class="right"> 
+        <h3 class="textimg" style="margin-top: 20px;"> ข้อมูลสินค้า </h3>
+        <label> ชื่อสินค้า </label>
+  </div>
+</div> -->
