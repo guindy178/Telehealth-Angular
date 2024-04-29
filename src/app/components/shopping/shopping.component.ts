@@ -59,7 +59,8 @@ search() {
       
     });
   } else {
-    this.filteredUser = this.Product; // กำหนดให้แสดงข้อมูลทั้งหมดเมื่อค่า Input เป็นค่าว่าง
+    this.filteredUser = this.Product;
+    
   }
 }
 
