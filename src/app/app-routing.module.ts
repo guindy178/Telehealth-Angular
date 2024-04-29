@@ -35,7 +35,7 @@ import { ProductdetailsComponent } from './components/productdetails/productdeta
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { PetitionsComponent } from './components/petitions/petitions.component';
-
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 const routes: Routes = [
   { path:"login", component:LoginsComponent},
   { path:"register", component:RegisterComponent},
@@ -64,7 +64,7 @@ const routes: Routes = [
     { path:"Shop", component:ShoppingComponent},
     { path:"Chst/history", component:ChathistoryComponent},
     
-
+    { path:"dashboard", component:DashboardComponent},
     { path:"edit/Products", component:EditproductComponent},
     { path:"edit/Product", component:ProductComponent},
     { path:"View/Product", component:VeiwproductComponent},
@@ -73,9 +73,11 @@ const routes: Routes = [
     { path:"AddCustomer/employee", component:RegisterComponent},
     { path:"EditCustomer/employee", component:EditprofileComponent},
     { path:"EditDoctor/employee", component:EditprofiledocComponent},
-    { path:"customer/details", component:CustomerComponent},
-    { path:"doctor/details", component:DoctordetailsComponent},
-    { path:"doctor/details/petition", component:DetailsComponent},
+    
+    { path:"dashboard/View/Product", component:VeiwproductComponent},
+    { path:"dashboard/customer/details", component:CustomerComponent},
+    { path:"dashboard/doctor/details", component:DoctordetailsComponent},
+    { path:"dashboard/doctor/details/petition", component:DetailsComponent},
     { path:"customer/details/Read", component:ReadComponent},
     { path:"doctor/details/Read-Doc", component:ReadDocComponent},
 

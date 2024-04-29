@@ -33,24 +33,19 @@ export class LoginsComponent {
           this.api.login(this.users, this.password).subscribe({
             next: (res) => {
               if (!res.status) {
-          
-                console.log({ res });
                 return;
               }
       
               this.router.navigate(['/']);
               this.data.user = res.data;
-      
-              console.log({ res });
             },
             error: (err) => {
               console.log({ err });
             }
           });
         } else {
-          this.router.navigate(['/']);
+          this.router.navigate(['/dashboard']);
           this.data.employee = res.data;
-          console.log({ res });
         }
       },
       error: (err) => {

@@ -1,0 +1,60 @@
+<div class="spaceTop"></div>
+
+<div class="container" *ngIf="data?.employee">
+    <div class="content">
+        <div class="info" routerLink="customer/details">
+            <img style="margin-right: 15px;" src="assets/user.png" 
+            alt="เพิ่มผู้ใช้"
+            width="210px"
+            height="210px">
+            <p style="font-size: 1.5rem; font-weight: bold;
+            " > ข้อมูลผู้ใช้งาน 
+            </p>
+       
+        </div>
+
+        <div class="infos" routerLink="doctor/details">
+          
+            <img style="margin-right: 15px;" src="assets/doctor.png" 
+            alt="เพิ่มผู้ใช้"
+            width="210px"
+            height="210px">
+            <p style="font-size: 1.5rem; width: 118;font-weight: bold;
+            " > ข้อมูลแพทย์
+            </p>
+        </div>
+        <div class="product">
+
+        </div>
+    </div>
+
+    <div class="content" style="margin-top: 15px;" routerLink="doctor/details/petition"> 
+        <div class="infosa">
+            <img style="margin-right: 15px;" src="assets/shopping-cart.png" 
+            alt="เพิ่มผู้ใช้"
+            width="210px"
+            height="210px">
+            <p style="font-size: 1.5rem; width: 118;font-weight: bold;
+            " > คำร้องขอสมัคร 
+            </p>
+        </div>
+
+        <div class="infoss" routerLink="View/Product">
+            <img style="margin-right: 15px;" src="assets/preview.png" 
+            alt="เพิ่มผู้ใช้"
+            width="210px"
+            height="210px">
+            <p style="font-size: 1.5rem; width: 118;font-weight: bold;
+            " > สินค้า
+            </p>
+        </div>
+        <div class="product">
+
+        </div>
+    </div>
+   
+   
+</div>
+
+<div class="spaceTop"></div>
+<router-outlet></router-outlet>

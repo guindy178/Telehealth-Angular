@@ -62,6 +62,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { PetitionsComponent } from './components/petitions/petitions.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const config: SocketIoConfig = {
 	url: socketUrl, // socket server url;
@@ -109,6 +110,7 @@ const config: SocketIoConfig = {
     CartComponent,
     CheckoutComponent,
     PetitionsComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

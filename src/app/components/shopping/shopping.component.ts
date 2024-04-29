@@ -6,7 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Types } from 'src/app/interfaces/product.interface';
 import { ProductTypes } from 'src/app/interfaces/product.interface';
-
+import { PaginatorModule } from 'primeng/paginator';
+import { LazyLoadEvent } from 'primeng/api';
 @Component({
   selector: 'app-shopping',
   templateUrl: './shopping.component.html',
@@ -16,18 +17,15 @@ export class ShoppingComponent {
   Product : Product [] = []
   Types : Types [] = []
   ProductTypes: ProductTypes [] = []
-
-  selectedTypeID: number = 0; // Initialize with a default value if needed
-
-// ใน component.ts
-selectedProduct: any; // ใช้เก็บรายการที่ถูกคลิก
-selectedColor: string = 'initialColor'; // ใช้สีเริ่มต้นที่คุณต้องการ
-
-selectedProductTypeID: number | null = null; // ประกาศ selectedProductTypeID ใน ShoppingComponent
-
+  selectedTypeID: number = 0; 
+  selectedProduct: any; 
+  selectedColor: string = 'initialColor'; 
+  selectedProductTypeID: number | null = null; 
   searchInput =''
   filteredUser: (Product) [] = [] ;
-
+  first: number = 0;
+  rows: number = 10; 
+  totalRecords: number = 0;
   constructor(
     public data: DataService,
      public router: ActivatedRoute,
@@ -44,7 +42,11 @@ selectedProductTypeID: number | null = null; // ประกาศ selectedProdu
   }
 
   
-  
+  onPageChange(event: LazyLoadEvent) {
+    this.first = event.first || 0;
+    this.rows = event.rows || 10;
+}
+
 search() {
   const searchTerm = this.searchInput.toLowerCase();
 

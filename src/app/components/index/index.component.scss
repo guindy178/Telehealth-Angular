@@ -1,3 +1,17 @@
+
+
+.charm-regular {
+  font-family: "Charm", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.charm-bold {
+  font-family: "Charm", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .spaceTop{
   height: 100px;
 }
@@ -53,6 +67,7 @@
   width: 24.75%;
   padding: 10px;
   height: 300px; /* Should be removed. Only for demonstration */
+  
 }
 
 /* Clear floats after the columns */
@@ -72,7 +87,7 @@
 .listDoctor{
   margin-top: 30px;
   background-color: aliceblue;
-  height: 550px;
+  height: auto;
   width: 100%;
   box-shadow: 5px  rgba(0, 0, 0, 0.2);
 }
@@ -87,6 +102,7 @@
   font-weight: bold;
   border-radius: 15px;
   padding: 5px 10px; /* ระยะห่างขอบของพื้นหลัง */
+  text-align: center;
 }
 .button {
   border: 2px solid pink; /* สร้างเส้นขอบสีชมพู */

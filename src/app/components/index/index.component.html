@@ -1,72 +1,16 @@
 <div class="spaceTop"></div>
-
-<div class="container" *ngIf="data?.employee">
-    <div class="content">
-        <div class="info" routerLink="customer/details">
-            <img style="margin-right: 15px;" src="assets/user.png" 
-            alt="เพิ่มผู้ใช้"
-            width="210px"
-            height="210px">
-            <p style="font-size: 1.5rem; font-weight: bold;
-            " > ข้อมูลผู้ใช้งาน 
-            </p>
-       
-        </div>
-
-        <div class="infos" routerLink="doctor/details">
-          
-            <img style="margin-right: 15px;" src="assets/doctor.png" 
-            alt="เพิ่มผู้ใช้"
-            width="210px"
-            height="210px">
-            <p style="font-size: 1.5rem; width: 118;font-weight: bold;
-            " > ข้อมูลแพทย์
-            </p>
-        </div>
-        <div class="product">
-
-        </div>
-    </div>
-
-    <div class="content" style="margin-top: 15px;" routerLink="doctor/details/petition"> 
-        <div class="infosa">
-            <img style="margin-right: 15px;" src="assets/shopping-cart.png" 
-            alt="เพิ่มผู้ใช้"
-            width="210px"
-            height="210px">
-            <p style="font-size: 1.5rem; width: 118;font-weight: bold;
-            " > คำร้องขอสมัคร 
-            </p>
-        </div>
-
-        <div class="infoss" routerLink="View/Product">
-            <img style="margin-right: 15px;" src="assets/preview.png" 
-            alt="เพิ่มผู้ใช้"
-            width="210px"
-            height="210px">
-            <p style="font-size: 1.5rem; width: 118;font-weight: bold;
-            " > สินค้า
-            </p>
-        </div>
-        <div class="product">
-
-        </div>
-    </div>
-   
-   
-</div>
-
 <div class="container" *ngIf="data?.user">
         <div class="imgs">
             <img  src="assets/โฆษณา.png" 
             alt="เพิ่มผู้ใช้"
             width="100%"
-            height="500px">
+            height="600px">
         </div>
 
         <div class="row" style="margin-top: 30px;">
             <div class="column" style="background-color:#ffffff;">
-              <h2 style="display: flex; color: #bf64b6;font-weight: bold;">สินค้าที่มียอดขายสูงสุด</h2>
+              <h2 style="display: flex; color: #bf64b6; font-weight: bold; font-family: 'Charm', cursive;">สินค้าที่มียอดขายสูงสุด</h2>
+
               <h2 style="display: flex;font-weight: bold;color: #bf64b6;font-weight: bold; ">สินค้าแนะนำ</h2>
               <p class="item" routerLink="/Shop">ดูทั้งหมด</p>
             </div>
@@ -74,40 +18,39 @@
               <div style="text-align: center;">              
                 <img src="http://localhost:3000/customer/api/image1/{{ProductHit.imagefile}}" 
                  alt="เพิ่มผู้ใช้"
-                 width="150px%"
+                 width="150px"
                  height="150px">
+                 <p style=" font-weight: bold; ">{{ProductHit.productName}}</p>
             </div>
 
-              <p style="padding: 0.952 rem; font-weight: bold;">{{ProductHit.productName}}</p>
             </div>
             
           </div>
 
 
           <div class="listDoctor">
-            <div style="text-align: center;margin-top: 15px; color: #d083c8;font-weight: bold; padding: 0.935rem;"> <h2> คุณหมอแนะนำ </h2> </div>
-            <div class="listItem"> 
+            <div style="text-align: center; margin-top: 15px; color: #d083c8; font-weight: bold; padding: 0.935rem;">
+                <h2 style="font-weight: bold; font-family: 'Charm', cursive;">คุณหมอแนะนำ</h2>
+            </div>
+            <div class="listItem">
                 <div class="row justify-content-center">
-                  <div class="col-3" style="margin: 10px;" style="margin: 10px; cursor: pointer;"*ngFor="let getDoctors of getDoctors" >
-                    <div class="card1">
-                      <img style="border-radius: 10px;" src="http://localhost:3000/customer/api/image1/{{getDoctors.imageFile}}" 
-                      alt="เพิ่มผู้ใช้"
-                      width="250px%"
-                      height="250px">
-                      <p style="font-size: 1.2rem; font-weight: bold; color: rgb(5, 95, 163); "> {{ getDoctors.firstName}} {{getDoctors.lastName}} </p>
-                      <p class="p"> {{getDoctors.departmentNames}} </p>
-                  
-
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin: 10px; cursor: pointer;" *ngFor="let getDoctors of getDoctors">
+                        <div class="card1" style="text-align: center;">
+                            <img style="border-radius: 10px; margin: auto; padding: 10px;" src="http://localhost:3000/customer/api/image1/{{getDoctors.imageFile}}" 
+                                 alt="เพิ่มผู้ใช้"
+                                 width="250"
+                                 height="250">
+                            <p style="font-size: 1.2rem; font-weight: bold; color: rgb(5, 95, 163);">{{ getDoctors.firstName }} {{ getDoctors.lastName }}</p>
+                            <p>{{ getDoctors.departmentNames }}</p>
+                        </div>
                     </div>
-                    
-                  </div>
-              
-                  <div style="text-align: center;"> <button class="button" routerLink="/doctor"> ดูทั้งหมด → </button></div>
                 </div>
-              </div>
-          
-          
-          </div>
+                <div style="text-align: center;"> 
+                    <button class="button" routerLink="/doctor">ดูทั้งหมด →</button>
+                </div>
+            </div>
+        </div>
+        
 </div>
 
 <div class="container" *ngIf="data.doctors" >

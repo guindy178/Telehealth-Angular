@@ -19,7 +19,7 @@ export class CustomerComponent {
   searchInput :string = '';
   first: number = 0;
   totalRecords: number = 0;
-  rows: number = 10; // Set your desired number of rows per page here
+  rows: number = 10;
 
   constructor(
     public data: DataService,

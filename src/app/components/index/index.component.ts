@@ -22,7 +22,7 @@ constructor(
 }
 setData() {
   this.api.getDoctors().subscribe(
-    (result: Res<allDoctorsResponse[]>) => { // แก้ไขประเภทพารามิเตอร์ให้ตรงกับข้อมูลที่ API ส่งกลับมา
+    (result: Res<allDoctorsResponse[]>) => { 
       this.getDoctors = result.data;
       console.log(this.getDoctors);
     },
@@ -33,7 +33,7 @@ setData() {
 }
 getData() {
   this.api.getCHitProduct().subscribe(
-    (result: Res<Producthit[]>) => { // แก้ไขประเภทพารามิเตอร์ให้ตรงกับข้อมูลที่ API ส่งกลับมา
+    (result: Res<Producthit[]>) => { 
       this.ProductHit = result.data;
 
       console.log(this.ProductHit);

@@ -1,9 +1,5 @@
 
 <div class="container">
-<!-- <img src="assets/45669.jpg"id="productImage" 
-alt="รูปภาพสินค้า" 
-style="max-height: 350px; width: 100%;"> -->
-
 <div class="spaces" >
  
     </div>
@@ -43,13 +39,10 @@ style="max-height: 350px; width: 100%;"> -->
             </div>
         </div>
     </div>
-    
-    
-      
-      
-      
-      
-           </div>
+  </div>
+  <div class="card flex justify-content-center">
+    <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="filteredUser.length" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+  </div>
       
 
     

@@ -8,10 +8,10 @@
            <ul>
                <li><a routerLink="" class="active">Home</a></li>
                <li><a  routerLink="/doctor/petition" [queryParams]="{ doctorsID: data.doctors?.doctorsID}" *ngIf="data?.doctors">ข้อมูลการนัดหมาย</a></li>
-               <li><a *ngIf="data?.employee" routerLink="View/Product" >เพื่มสินค้า</a></li>
-               <li><a *ngIf="data?.employee" routerLink="customer/details">รายละเอียดผู้ใช้งาน</a></li>
-               <li><a *ngIf="data?.employee" routerLink="doctor/details">รายละเอียดหมอ</a></li> 
-               <li><a *ngIf="data?.employee" routerLink="doctor/details/petition">รายละเอียดคำร้องขอสมัคร</a></li> 
+               <li><a *ngIf="data?.employee" routerLink="dashboard/View/Product" >เพื่มสินค้า</a></li>
+               <li><a *ngIf="data?.employee" routerLink="dashboard/customer/details">รายละเอียดผู้ใช้งาน</a></li>
+               <li><a *ngIf="data?.employee" routerLink="dashboard/doctor/details">รายละเอียดหมอ</a></li> 
+               <li><a *ngIf="data?.employee" routerLink="dashboard/doctor/details/petition">รายละเอียดคำร้องขอสมัคร</a></li> 
                <li><a *ngIf="data?.user" routerLink="Chst/history" [queryParams]="{ customerID: data.user?.customerID}"  >ประวัติการปรึกษา</a></li> 
               
 
